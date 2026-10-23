@@ -1,0 +1,383 @@
+{
+  "$defs": {
+    "ChangeOrder": {
+      "properties": {
+        "project_name": {
+          "$ref": "#/$defs/ExtractedField"
+        },
+        "project_number": {
+          "$ref": "#/$defs/ExtractedField"
+        },
+        "change_order_number": {
+          "$ref": "#/$defs/ExtractedField"
+        },
+        "contract_number": {
+          "$ref": "#/$defs/ExtractedField"
+        },
+        "revision_number": {
+          "$ref": "#/$defs/ExtractedField"
+        },
+        "date_issued": {
+          "$ref": "#/$defs/ExtractedField"
+        },
+        "owner": {
+          "$ref": "#/$defs/ExtractedField"
+        },
+        "contractor": {
+          "$ref": "#/$defs/ExtractedField"
+        },
+        "architect_or_engineer": {
+          "$ref": "#/$defs/ExtractedField"
+        },
+        "requested_by": {
+          "$ref": "#/$defs/ExtractedField"
+        },
+        "title": {
+          "$ref": "#/$defs/ExtractedField"
+        },
+        "description": {
+          "$ref": "#/$defs/ExtractedField"
+        },
+        "reason": {
+          "$ref": "#/$defs/ExtractedField"
+        },
+        "change_type": {
+          "$ref": "#/$defs/ExtractedField"
+        },
+        "line_items": {
+          "items": {
+            "$ref": "#/$defs/LineItem"
+          },
+          "title": "Line Items",
+          "type": "array"
+        },
+        "subtotal": {
+          "$ref": "#/$defs/ExtractedField"
+        },
+        "markup": {
+          "$ref": "#/$defs/ExtractedField"
+        },
+        "tax": {
+          "$ref": "#/$defs/ExtractedField"
+        },
+        "total_amount": {
+          "$ref": "#/$defs/ExtractedField"
+        },
+        "currency": {
+          "$ref": "#/$defs/ExtractedField"
+        },
+        "original_contract_sum": {
+          "$ref": "#/$defs/ExtractedField"
+        },
+        "revised_contract_sum": {
+          "$ref": "#/$defs/ExtractedField"
+        },
+        "schedule_impact_days": {
+          "$ref": "#/$defs/ExtractedField"
+        },
+        "original_completion_date": {
+          "$ref": "#/$defs/ExtractedField"
+        },
+        "new_completion_date": {
+          "$ref": "#/$defs/ExtractedField"
+        },
+        "status": {
+          "$ref": "#/$defs/ExtractedField"
+        },
+        "signatures": {
+          "items": {
+            "$ref": "#/$defs/Signature"
+          },
+          "title": "Signatures",
+          "type": "array"
+        }
+      },
+      "title": "ChangeOrder",
+      "type": "object"
+    },
+    "ExtractedField": {
+      "properties": {
+        "value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        },
+        "normalized_value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Normalized Value"
+        },
+        "confidence": {
+          "default": 0.0,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "evidence": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Evidence"
+        },
+        "page": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Page"
+        },
+        "flags": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Flags",
+          "type": "array"
+        },
+        "model_confidence": {
+          "anyOf": [
+            {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model Confidence"
+        }
+      },
+      "title": "ExtractedField",
+      "type": "object"
+    },
+    "LineItem": {
+      "properties": {
+        "description": {
+          "$ref": "#/$defs/ExtractedField"
+        },
+        "quantity": {
+          "$ref": "#/$defs/ExtractedField"
+        },
+        "unit": {
+          "$ref": "#/$defs/ExtractedField"
+        },
+        "unit_cost": {
+          "$ref": "#/$defs/ExtractedField"
+        },
+        "amount": {
+          "$ref": "#/$defs/ExtractedField"
+        },
+        "cost_code": {
+          "$ref": "#/$defs/ExtractedField"
+        }
+      },
+      "title": "LineItem",
+      "type": "object"
+    },
+    "RunMetadata": {
+      "properties": {
+        "model": {
+          "default": "none",
+          "title": "Model",
+          "type": "string"
+        },
+        "prompt_version": {
+          "default": "none",
+          "title": "Prompt Version",
+          "type": "string"
+        },
+        "latency_ms": {
+          "default": 0,
+          "title": "Latency Ms",
+          "type": "integer"
+        },
+        "input_tokens": {
+          "default": 0,
+          "title": "Input Tokens",
+          "type": "integer"
+        },
+        "output_tokens": {
+          "default": 0,
+          "title": "Output Tokens",
+          "type": "integer"
+        },
+        "cost_estimate": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Cost Estimate"
+        },
+        "source_hash": {
+          "default": "",
+          "title": "Source Hash",
+          "type": "string"
+        },
+        "pipeline_version": {
+          "default": "0.1.0",
+          "title": "Pipeline Version",
+          "type": "string"
+        },
+        "trace_id": {
+          "default": "",
+          "title": "Trace Id",
+          "type": "string"
+        },
+        "cache_hit": {
+          "default": false,
+          "title": "Cache Hit",
+          "type": "boolean"
+        },
+        "confidence_mode": {
+          "default": "heuristic_uncalibrated",
+          "title": "Confidence Mode",
+          "type": "string"
+        }
+      },
+      "title": "RunMetadata",
+      "type": "object"
+    },
+    "Signature": {
+      "properties": {
+        "name": {
+          "$ref": "#/$defs/ExtractedField"
+        },
+        "role": {
+          "$ref": "#/$defs/ExtractedField"
+        },
+        "date": {
+          "$ref": "#/$defs/ExtractedField"
+        },
+        "signed": {
+          "$ref": "#/$defs/ExtractedField"
+        }
+      },
+      "title": "Signature",
+      "type": "object"
+    },
+    "ValidationIssue": {
+      "properties": {
+        "code": {
+          "title": "Code",
+          "type": "string"
+        },
+        "severity": {
+          "enum": [
+            "info",
+            "warning",
+            "error"
+          ],
+          "title": "Severity",
+          "type": "string"
+        },
+        "field": {
+          "title": "Field",
+          "type": "string"
+        },
+        "message": {
+          "title": "Message",
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "severity",
+        "field",
+        "message"
+      ],
+      "title": "ValidationIssue",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "orders": {
+      "items": {
+        "$ref": "#/$defs/ChangeOrder"
+      },
+      "title": "Orders",
+      "type": "array"
+    },
+    "document_confidence": {
+      "default": 0,
+      "maximum": 1,
+      "minimum": 0,
+      "title": "Document Confidence",
+      "type": "number"
+    },
+    "needs_review": {
+      "default": true,
+      "title": "Needs Review",
+      "type": "boolean"
+    },
+    "validation_report": {
+      "items": {
+        "$ref": "#/$defs/ValidationIssue"
+      },
+      "title": "Validation Report",
+      "type": "array"
+    },
+    "warnings": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Warnings",
+      "type": "array"
+    },
+    "metadata": {
+      "$ref": "#/$defs/RunMetadata"
+    }
+  },
+  "title": "DocumentResult",
+  "type": "object"
+}
