@@ -85,11 +85,11 @@ flowchart LR
 
 ## 4. Evaluation & Verification Summary
 
-| Evaluation Suite | Evaluated Provider / Engine | Scope | Field F1 | Line-Item F1 | Review Decision |
-|---|---|---|:---:|:---:|:---:|
-| **Live Gemini DEV** | **Google Gemini 2.5 Flash** (Live API) | 11 Documents (325 fields) | **0.9966** | **0.9810** | 11 / 11 Review |
-| **Synthetic TEST** | Offline MockLLM Heuristic | 40 Held-Out Documents | **0.9952** | **0.9783** | 40 / 40 Review |
-| **Adversarial Challenge** | Offline MockLLM Heuristic | 26 Independent Cases | **0.7902** | **0.0000** | 26 / 26 Review |
+| Evaluation Suite | Evaluated Provider / Engine | Scope | Field F1 | Line-Item F1 | Latency (Mean / p50) | Review Decision |
+|---|---|---|:---:|:---:|:---:|:---:|
+| **Live Gemini DEV** | **Google Gemini 2.5 Flash** (Live API) | 11 Documents (325 fields) | **0.9966** | **1.0000** | 10.1s / 9.0s | 11 / 11 Review |
+| **Synthetic TEST** | Offline MockLLM Heuristic | 40 Held-Out Documents | **0.9952** | **0.9783** | 22.5 ms / 22 ms | 40 / 40 Review |
+| **Adversarial Challenge** | Offline MockLLM Heuristic | 26 Independent Cases | **0.7902** | **0.0000** | 18.4 ms / 18 ms | 26 / 26 Review |
 
 *Note on Calibration & Gating:* The selective review gate targets ≥95% accuracy on critical financial fields. On DEV, the fitted logistic calibrator identified no operating threshold that could guarantee zero financial risk without human review, deliberately setting the acceptance threshold to **1.01** (unreachable). In commercial construction, zero false automated approvals is the only defensible safety posture.
 
