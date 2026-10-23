@@ -29,7 +29,9 @@ def parse_number(value: str | float | int | None) -> float | None:
     if len(numbers) != 1:
         return None
     num = numbers[0].replace(" ", "")
-    if "," in num and "." in num:
+    if re.fullmatch(r"\d{1,3}(?:[.,]\d{3}){2,}", num):
+        num = num.replace(",", "").replace(".", "")
+    elif "," in num and "." in num:
         if num.rfind(",") > num.rfind("."):
             num = num.replace(".", "").replace(",", ".")
         else:

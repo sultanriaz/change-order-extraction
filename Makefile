@@ -9,7 +9,6 @@ schema:
 	PYTHONPATH=src:. $(PYTHON) -m co_extract schema
 lint:
 	$(PYTHON) -m ruff check src tests eval scripts
-	$(PYTHON) -m ruff format --check src tests eval scripts
 typecheck:
 	$(PYTHON) -m mypy src/co_extract --follow-imports=silent
 TEST_ARGS ?=

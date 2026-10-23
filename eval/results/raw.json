@@ -31,7 +31,9 @@
     "needs_review": true,
     "confidence": 0.0,
     "validation_issues": [],
-    "warnings": [],
+    "warnings": [
+      "unpriced_total_requires_review"
+    ],
     "field_metrics": {
       "precision": 1.0,
       "recall": 1.0,
@@ -349,7 +351,9 @@
     "needs_review": true,
     "confidence": 0.0,
     "validation_issues": [],
-    "warnings": [],
+    "warnings": [
+      "unpriced_total_requires_review"
+    ],
     "field_metrics": {
       "precision": 1.0,
       "recall": 1.0,
@@ -667,7 +671,9 @@
     "needs_review": true,
     "confidence": 0.0,
     "validation_issues": [],
-    "warnings": [],
+    "warnings": [
+      "unpriced_total_requires_review"
+    ],
     "field_metrics": {
       "precision": 1.0,
       "recall": 1.0,

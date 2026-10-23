@@ -1,10 +1,9 @@
-from pathlib import Path
 from co_extract.pipeline import Pipeline
-from co_extract.llm import MockLLM, LLMResponse
+from co_extract.llm import MockLLM
 from co_extract.security import redact, detect_injection
 from co_extract.ingest import Document, Page
 from co_extract.schema import ChangeOrder, ExtractedField
-from co_extract.confidence import score_orders, ground_score
+from co_extract.confidence import score_orders
 
 def test_redaction():
     assert 'secret@example.com' not in redact('secret@example.com 555-014-2255')

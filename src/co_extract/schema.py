@@ -3,7 +3,7 @@ from __future__ import annotations
 
 from typing import Literal
 
-from pydantic import BaseModel, Field, ConfigDict
+from pydantic import BaseModel, Field
 
 
 class StrField(BaseModel):
@@ -22,6 +22,13 @@ class FloatField(BaseModel):
 
 class IntField(BaseModel):
     value: int | None = None
+    evidence: str | None = None
+    page: int | None = None
+    model_confidence: float | None = Field(default=None, ge=0, le=1)
+
+
+class BoolField(BaseModel):
+    value: bool | None = None
     evidence: str | None = None
     page: int | None = None
     model_confidence: float | None = Field(default=None, ge=0, le=1)
@@ -48,7 +55,7 @@ class LLMSignature(BaseModel):
     name: StrField = Field(default_factory=StrField)
     role: StrField = Field(default_factory=StrField)
     date: DateField = Field(default_factory=DateField)
-    signed: EnumField = Field(default_factory=EnumField)
+    signed: BoolField = Field(default_factory=BoolField)
 
 
 class LLMChangeOrder(BaseModel):

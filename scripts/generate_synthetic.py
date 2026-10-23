@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import io
 import random
 from pathlib import Path
 
@@ -11,6 +12,7 @@ from faker import Faker
 from PIL import Image, ImageFilter
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
+from reportlab.lib.utils import ImageReader
 
 ROOT = Path(__file__).resolve().parents[1]
 SEED = 271828
@@ -23,7 +25,7 @@ MODES = ["typed_pdf", "aia_style_pdf", "email_text", "multi_page_pdf", "scanned_
 def pdf_write(text: str, target: Path, *, table: bool = False) -> None:
     """Render page-delimited text in a real PDF, leaving extractable fonts."""
     target.parent.mkdir(parents=True, exist_ok=True)
-    pdf = canvas.Canvas(str(target), pagesize=letter)
+    pdf = canvas.Canvas(str(target), pagesize=letter, invariant=1)
     for page in text.split("\f"):
         y = 750
         if table:
@@ -57,7 +59,15 @@ def scan_pdf(path: Path, rng: random.Random) -> None:
         img = img.filter(ImageFilter.GaussianBlur(0.35))
         images.append(img.convert("RGB"))
     doc.close()
-    images[0].save(path, "PDF", resolution=144, save_all=True, append_images=images[1:])
+    output = canvas.Canvas(str(path), pagesize=letter, invariant=1)
+    for image in images:
+        # DCT/JPEG keeps image-only scans realistic but the committed corpus compact.
+        buffer = io.BytesIO()
+        image.save(buffer, format="JPEG", quality=82, optimize=True)
+        buffer.seek(0)
+        output.drawImage(ImageReader(buffer), 0, 0, width=letter[0], height=letter[1])
+        output.showPage()
+    output.save()
 
 
 def order_text(i: int, tag: str, *, second: bool = False) -> tuple[str, dict]:

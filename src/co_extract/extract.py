@@ -1,8 +1,6 @@
 """LLM extraction, schema repair, page-window overlap, and conflicting-field merge."""
 from __future__ import annotations
 
-import json
-from collections import defaultdict
 
 from pydantic import ValidationError
 

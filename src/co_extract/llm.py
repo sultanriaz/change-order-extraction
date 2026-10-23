@@ -8,7 +8,6 @@ import random
 import threading
 import time
 from dataclasses import dataclass
-from pathlib import Path
 from typing import Protocol
 
 from co_extract.config import Settings

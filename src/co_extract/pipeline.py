@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import time
+import re
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from uuid import uuid4
@@ -45,6 +46,17 @@ class Pipeline:
             result.orders = orders
             result.warnings.extend(warnings)
             for order in orders:
+                # Explicitly retain unpriced/TBD evidence with a null numeric value.
+                if order.total_amount.value is None:
+                    for page in document.pages:
+                        match = re.search(r'(?im)^\s*Total Amount:\s*(?:TBD|to be negotiated|time and materials)[^\n]*', page.text)
+                        if match:
+                            order.total_amount.evidence = match.group(0).strip()
+                            order.total_amount.page = page.num
+                            if 'unpriced_tbd' not in order.total_amount.flags:
+                                order.total_amount.flags.append('unpriced_tbd')
+                            result.warnings.append('unpriced_total_requires_review')
+                            break
                 normalize_order(order)
                 result.validation_report.extend(validate_order(order))
             result.document_confidence = score_orders(orders, document, params=self.params,
@@ -59,7 +71,7 @@ class Pipeline:
                                                       result.metadata.output_tokens * self.settings.output_usd_per_m)/1_000_000, 8)
             threshold = self.params['review_threshold'] if self.params else self.settings.review_threshold
             result.needs_review = (result.document_confidence < threshold or not orders or injected or
-                                   bool(result.validation_report) or
+                                   bool(result.validation_report) or 'unpriced_total_requires_review' in result.warnings or
                                    any('not_grounded' in f.flags or 'conflicting_candidates' in f.flags
                                        for order in orders for _, f in iter_fields(order)))
         except Exception as exc:

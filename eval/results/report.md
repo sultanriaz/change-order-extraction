@@ -13,11 +13,11 @@
 | Field F1 | 0.9952 | 0.9952 |
 | Correct null rate | 1.0 | 1.0 |
 | Hallucination rate | 0.0 | 0.0 |
-| Line item matched F1 | 0.9565 | not computed separately |
+| Line item matched F1 | 0.9783 | 0.9783 |
 
 **ECE on extracted non-null TEST fields:** 0.1604 (10 fixed bins).
 **Documents marked for review:** 40/40.
-**Latency p50/p95:** 24/777 ms; **cost estimate:** $0.000000 (assumed prices, not invoices).
+**Latency p50/p95:** 22/833 ms; **cost estimate:** $0.000000 (assumed prices, not invoices).
 
 ![Reliability diagram](reliability.png)
 
@@ -51,6 +51,43 @@
 | two_orders_pdf | 300 | 1.0000 |
 | typed_pdf | 150 | 1.0000 |
 
+## Source-quality slices
+
+| Source quality | N field rows | F1 |
+|---|---:|---:|
+| native_text | 1000 | 0.9983 |
+| ocr | 150 | 0.9738 |
+
+## Field-level metrics
+
+| Field | Precision | Recall | F1 |
+|---|---:|---:|---:|
+| project_name | 1.0000 | 1.0000 | 1.0000 |
+| project_number | 0.9565 | 0.9565 | 0.9565 |
+| change_order_number | 1.0000 | 1.0000 | 1.0000 |
+| contract_number | 0.9783 | 0.9783 | 0.9783 |
+| revision_number | 1.0000 | 1.0000 | 1.0000 |
+| date_issued | 1.0000 | 1.0000 | 1.0000 |
+| owner | 1.0000 | 0.9783 | 0.9890 |
+| contractor | 1.0000 | 1.0000 | 1.0000 |
+| architect_or_engineer | 0.0000 | 0.0000 | 0.0000 |
+| requested_by | 0.0000 | 0.0000 | 0.0000 |
+| title | 1.0000 | 1.0000 | 1.0000 |
+| description | 1.0000 | 1.0000 | 1.0000 |
+| reason | 1.0000 | 1.0000 | 1.0000 |
+| change_type | 1.0000 | 1.0000 | 1.0000 |
+| subtotal | 1.0000 | 0.9302 | 0.9639 |
+| markup | 1.0000 | 1.0000 | 1.0000 |
+| tax | 1.0000 | 1.0000 | 1.0000 |
+| total_amount | 1.0000 | 1.0000 | 1.0000 |
+| currency | 1.0000 | 1.0000 | 1.0000 |
+| original_contract_sum | 1.0000 | 1.0000 | 1.0000 |
+| revised_contract_sum | 1.0000 | 1.0000 | 1.0000 |
+| schedule_impact_days | 1.0000 | 1.0000 | 1.0000 |
+| original_completion_date | 1.0000 | 1.0000 | 1.0000 |
+| new_completion_date | 1.0000 | 1.0000 | 1.0000 |
+| status | 1.0000 | 1.0000 | 1.0000 |
+
 ## Threshold and ablations
 
 DEV-fitted: `True`; threshold `1.01`; DEV training rows `519`.
@@ -71,6 +108,17 @@ Grounding check ablation changes confidence/review flags but not extracted field
 | 0.90 | 0.8712 | 0.0000 |
 | 0.95 | 0.0000 | N/A |
 | 1.00 | 0.0000 | N/A |
+
+### Offline ablation runs (same TEST documents; not Gemini evidence)
+
+| Variant | Field F1 | Mean document confidence | Review count |
+|---|---:|---:|---:|
+| Default (same 8) | 0.9975 | 0.7025 | 8 |
+| no_grounding | 0.9975 | 0.7025 | 8 |
+| no_validation_retry | 0.9975 | 0.7025 | 8 |
+| self_consistency_3 | 0.9975 | 0.7025 | 8 |
+| vision_bytes | 0.9975 | 0.7025 | 8 |
+All variants were actually executed against the first 8 held-out TEST documents. Identical F1 is expected: MockLLM ignores temperature and PDF bytes; the schema never fails, and grounding affects scoring rather than extraction. Differences in confidence are algorithmic, **not validated gains**.
 
 ## Evaluation limitations
 
