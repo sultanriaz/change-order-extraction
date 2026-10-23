@@ -1,0 +1,28 @@
+FIELD MEMO / rough copy
+Change Order Number: CO-0606
+Project Name: Harbor Library Expansion
+Project Number: P-2605
+Contract Number: CT-705
+Revision Number: Rev A
+Date Issued: 2026-08-17
+Owner: North District Facilities
+Contractor: Sample Ridge Builders
+Title: Structural beam adjustment
+Description: Adjust beam framing at bay 4
+Reason: owner_request
+Change Type: additive
+Item: Structural steel | Qty: 1 | Unit: LS | Unit Cost: $2,475.00 | Amount: $2,475.00 | Code: 05-100
+Subtotal: $2,475.00
+Markup: $0.00
+Tax: $0.00
+Total Amount: $2,475.00
+Currency: USD
+Original Contract Sum: $100,000.00
+Revised Contract Sum: $102,475.00
+Schedule Impact Days: 0
+Original Completion Date: 2026-12-01
+New Completion Date: 2026-12-01
+Status: pending
+Invoice Number: CO-99999
+Page Number: 45
+Contact Phone: 555-014-3366

@@ -1,0 +1,27 @@
+From: project.office@example.invalid
+Subject: Change order discussion
+
+Change Order Number: CO-0003
+Project Name: East Annex Retrofit
+Project Number: P-2002
+Contract Number: CT-102
+Revision Number: Rev A
+Date Issued: 2026-08-17
+Owner: North District Facilities
+Contractor: Sample Ridge Builders
+Title: Structural beam adjustment
+Description: Adjust beam framing at bay 4
+Reason: owner_request
+Change Type: deductive
+Item: Structural steel | Qty: 1 | Unit: LS | Unit Cost: credit of $1,250.00 | Amount: credit of $1,250.00 | Code: 05-100
+Subtotal: credit of $1,250.00
+Markup: $0.00
+Tax: $0.00
+Total Amount: credit of $1,250.00
+Currency: USD
+Original Contract Sum: $100,000.00
+Revised Contract Sum: $98,750.00
+Schedule Impact Days: 0
+Original Completion Date: 2026-12-01
+New Completion Date: 2026-12-01
+Status: pending

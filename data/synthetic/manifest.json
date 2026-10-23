@@ -1,0 +1,1202 @@
+[
+  {
+    "id": "syn-000",
+    "split": "train",
+    "tags": [
+      "negative_parentheses"
+    ],
+    "mode": "typed_pdf",
+    "source": "data/synthetic/train/syn-000.pdf",
+    "truth": "data/synthetic/train/syn-000.truth.json"
+  },
+  {
+    "id": "syn-001",
+    "split": "train",
+    "tags": [
+      "negative_minus"
+    ],
+    "mode": "aia_style_pdf",
+    "source": "data/synthetic/train/syn-001.pdf",
+    "truth": "data/synthetic/train/syn-001.truth.json"
+  },
+  {
+    "id": "syn-002",
+    "split": "train",
+    "tags": [
+      "negative_credit"
+    ],
+    "mode": "email_text",
+    "source": "data/synthetic/train/syn-002.txt",
+    "truth": "data/synthetic/train/syn-002.truth.json"
+  },
+  {
+    "id": "syn-003",
+    "split": "train",
+    "tags": [
+      "tbd"
+    ],
+    "mode": "multi_page_pdf",
+    "source": "data/synthetic/train/syn-003.pdf",
+    "truth": "data/synthetic/train/syn-003.truth.json"
+  },
+  {
+    "id": "syn-004",
+    "split": "train",
+    "tags": [
+      "ambiguous_date"
+    ],
+    "mode": "scanned_pdf",
+    "source": "data/synthetic/train/syn-004.pdf",
+    "truth": "data/synthetic/train/syn-004.truth.json"
+  },
+  {
+    "id": "syn-005",
+    "split": "train",
+    "tags": [
+      "european_numbers"
+    ],
+    "mode": "pasted_txt",
+    "source": "data/synthetic/train/syn-005.txt",
+    "truth": "data/synthetic/train/syn-005.truth.json"
+  },
+  {
+    "id": "syn-006",
+    "split": "train",
+    "tags": [
+      "non_summing"
+    ],
+    "mode": "two_orders_pdf",
+    "source": "data/synthetic/train/syn-006.pdf",
+    "truth": "data/synthetic/train/syn-006.truth.json"
+  },
+  {
+    "id": "syn-007",
+    "split": "train",
+    "tags": [
+      "superseded_revision"
+    ],
+    "mode": "typed_pdf",
+    "source": "data/synthetic/train/syn-007.pdf",
+    "truth": "data/synthetic/train/syn-007.truth.json"
+  },
+  {
+    "id": "syn-008",
+    "split": "train",
+    "tags": [
+      "missing_fields"
+    ],
+    "mode": "aia_style_pdf",
+    "source": "data/synthetic/train/syn-008.pdf",
+    "truth": "data/synthetic/train/syn-008.truth.json"
+  },
+  {
+    "id": "syn-009",
+    "split": "train",
+    "tags": [
+      "ocr_typos"
+    ],
+    "mode": "email_text",
+    "source": "data/synthetic/train/syn-009.txt",
+    "truth": "data/synthetic/train/syn-009.truth.json"
+  },
+  {
+    "id": "syn-010",
+    "split": "train",
+    "tags": [
+      "distractor_numbers"
+    ],
+    "mode": "multi_page_pdf",
+    "source": "data/synthetic/train/syn-010.pdf",
+    "truth": "data/synthetic/train/syn-010.truth.json"
+  },
+  {
+    "id": "syn-011",
+    "split": "train",
+    "tags": [
+      "prompt_injection"
+    ],
+    "mode": "scanned_pdf",
+    "source": "data/synthetic/train/syn-011.pdf",
+    "truth": "data/synthetic/train/syn-011.truth.json"
+  },
+  {
+    "id": "syn-012",
+    "split": "train",
+    "tags": [
+      "pii"
+    ],
+    "mode": "pasted_txt",
+    "source": "data/synthetic/train/syn-012.txt",
+    "truth": "data/synthetic/train/syn-012.truth.json"
+  },
+  {
+    "id": "syn-013",
+    "split": "train",
+    "tags": [
+      "negative_parentheses"
+    ],
+    "mode": "two_orders_pdf",
+    "source": "data/synthetic/train/syn-013.pdf",
+    "truth": "data/synthetic/train/syn-013.truth.json"
+  },
+  {
+    "id": "syn-014",
+    "split": "train",
+    "tags": [
+      "negative_minus"
+    ],
+    "mode": "typed_pdf",
+    "source": "data/synthetic/train/syn-014.pdf",
+    "truth": "data/synthetic/train/syn-014.truth.json"
+  },
+  {
+    "id": "syn-015",
+    "split": "train",
+    "tags": [
+      "negative_credit"
+    ],
+    "mode": "aia_style_pdf",
+    "source": "data/synthetic/train/syn-015.pdf",
+    "truth": "data/synthetic/train/syn-015.truth.json"
+  },
+  {
+    "id": "syn-016",
+    "split": "train",
+    "tags": [
+      "tbd"
+    ],
+    "mode": "email_text",
+    "source": "data/synthetic/train/syn-016.txt",
+    "truth": "data/synthetic/train/syn-016.truth.json"
+  },
+  {
+    "id": "syn-017",
+    "split": "train",
+    "tags": [
+      "ambiguous_date"
+    ],
+    "mode": "multi_page_pdf",
+    "source": "data/synthetic/train/syn-017.pdf",
+    "truth": "data/synthetic/train/syn-017.truth.json"
+  },
+  {
+    "id": "syn-018",
+    "split": "train",
+    "tags": [
+      "european_numbers"
+    ],
+    "mode": "scanned_pdf",
+    "source": "data/synthetic/train/syn-018.pdf",
+    "truth": "data/synthetic/train/syn-018.truth.json"
+  },
+  {
+    "id": "syn-019",
+    "split": "train",
+    "tags": [
+      "non_summing"
+    ],
+    "mode": "pasted_txt",
+    "source": "data/synthetic/train/syn-019.txt",
+    "truth": "data/synthetic/train/syn-019.truth.json"
+  },
+  {
+    "id": "syn-020",
+    "split": "train",
+    "tags": [
+      "superseded_revision"
+    ],
+    "mode": "two_orders_pdf",
+    "source": "data/synthetic/train/syn-020.pdf",
+    "truth": "data/synthetic/train/syn-020.truth.json"
+  },
+  {
+    "id": "syn-021",
+    "split": "train",
+    "tags": [
+      "missing_fields"
+    ],
+    "mode": "typed_pdf",
+    "source": "data/synthetic/train/syn-021.pdf",
+    "truth": "data/synthetic/train/syn-021.truth.json"
+  },
+  {
+    "id": "syn-022",
+    "split": "train",
+    "tags": [
+      "ocr_typos"
+    ],
+    "mode": "aia_style_pdf",
+    "source": "data/synthetic/train/syn-022.pdf",
+    "truth": "data/synthetic/train/syn-022.truth.json"
+  },
+  {
+    "id": "syn-023",
+    "split": "train",
+    "tags": [
+      "distractor_numbers"
+    ],
+    "mode": "email_text",
+    "source": "data/synthetic/train/syn-023.txt",
+    "truth": "data/synthetic/train/syn-023.truth.json"
+  },
+  {
+    "id": "syn-024",
+    "split": "train",
+    "tags": [
+      "prompt_injection"
+    ],
+    "mode": "multi_page_pdf",
+    "source": "data/synthetic/train/syn-024.pdf",
+    "truth": "data/synthetic/train/syn-024.truth.json"
+  },
+  {
+    "id": "syn-025",
+    "split": "train",
+    "tags": [
+      "pii"
+    ],
+    "mode": "scanned_pdf",
+    "source": "data/synthetic/train/syn-025.pdf",
+    "truth": "data/synthetic/train/syn-025.truth.json"
+  },
+  {
+    "id": "syn-026",
+    "split": "train",
+    "tags": [
+      "negative_parentheses"
+    ],
+    "mode": "pasted_txt",
+    "source": "data/synthetic/train/syn-026.txt",
+    "truth": "data/synthetic/train/syn-026.truth.json"
+  },
+  {
+    "id": "syn-027",
+    "split": "train",
+    "tags": [
+      "negative_minus"
+    ],
+    "mode": "two_orders_pdf",
+    "source": "data/synthetic/train/syn-027.pdf",
+    "truth": "data/synthetic/train/syn-027.truth.json"
+  },
+  {
+    "id": "syn-028",
+    "split": "train",
+    "tags": [
+      "negative_credit"
+    ],
+    "mode": "typed_pdf",
+    "source": "data/synthetic/train/syn-028.pdf",
+    "truth": "data/synthetic/train/syn-028.truth.json"
+  },
+  {
+    "id": "syn-029",
+    "split": "train",
+    "tags": [
+      "tbd"
+    ],
+    "mode": "aia_style_pdf",
+    "source": "data/synthetic/train/syn-029.pdf",
+    "truth": "data/synthetic/train/syn-029.truth.json"
+  },
+  {
+    "id": "syn-030",
+    "split": "train",
+    "tags": [
+      "ambiguous_date"
+    ],
+    "mode": "email_text",
+    "source": "data/synthetic/train/syn-030.txt",
+    "truth": "data/synthetic/train/syn-030.truth.json"
+  },
+  {
+    "id": "syn-031",
+    "split": "train",
+    "tags": [
+      "european_numbers"
+    ],
+    "mode": "multi_page_pdf",
+    "source": "data/synthetic/train/syn-031.pdf",
+    "truth": "data/synthetic/train/syn-031.truth.json"
+  },
+  {
+    "id": "syn-032",
+    "split": "train",
+    "tags": [
+      "non_summing"
+    ],
+    "mode": "scanned_pdf",
+    "source": "data/synthetic/train/syn-032.pdf",
+    "truth": "data/synthetic/train/syn-032.truth.json"
+  },
+  {
+    "id": "syn-033",
+    "split": "train",
+    "tags": [
+      "superseded_revision"
+    ],
+    "mode": "pasted_txt",
+    "source": "data/synthetic/train/syn-033.txt",
+    "truth": "data/synthetic/train/syn-033.truth.json"
+  },
+  {
+    "id": "syn-034",
+    "split": "train",
+    "tags": [
+      "missing_fields"
+    ],
+    "mode": "two_orders_pdf",
+    "source": "data/synthetic/train/syn-034.pdf",
+    "truth": "data/synthetic/train/syn-034.truth.json"
+  },
+  {
+    "id": "syn-035",
+    "split": "train",
+    "tags": [
+      "ocr_typos"
+    ],
+    "mode": "typed_pdf",
+    "source": "data/synthetic/train/syn-035.pdf",
+    "truth": "data/synthetic/train/syn-035.truth.json"
+  },
+  {
+    "id": "syn-036",
+    "split": "train",
+    "tags": [
+      "distractor_numbers"
+    ],
+    "mode": "aia_style_pdf",
+    "source": "data/synthetic/train/syn-036.pdf",
+    "truth": "data/synthetic/train/syn-036.truth.json"
+  },
+  {
+    "id": "syn-037",
+    "split": "train",
+    "tags": [
+      "prompt_injection"
+    ],
+    "mode": "email_text",
+    "source": "data/synthetic/train/syn-037.txt",
+    "truth": "data/synthetic/train/syn-037.truth.json"
+  },
+  {
+    "id": "syn-038",
+    "split": "train",
+    "tags": [
+      "pii"
+    ],
+    "mode": "multi_page_pdf",
+    "source": "data/synthetic/train/syn-038.pdf",
+    "truth": "data/synthetic/train/syn-038.truth.json"
+  },
+  {
+    "id": "syn-039",
+    "split": "train",
+    "tags": [
+      "negative_parentheses"
+    ],
+    "mode": "scanned_pdf",
+    "source": "data/synthetic/train/syn-039.pdf",
+    "truth": "data/synthetic/train/syn-039.truth.json"
+  },
+  {
+    "id": "syn-040",
+    "split": "train",
+    "tags": [
+      "negative_minus"
+    ],
+    "mode": "pasted_txt",
+    "source": "data/synthetic/train/syn-040.txt",
+    "truth": "data/synthetic/train/syn-040.truth.json"
+  },
+  {
+    "id": "syn-041",
+    "split": "train",
+    "tags": [
+      "negative_credit"
+    ],
+    "mode": "two_orders_pdf",
+    "source": "data/synthetic/train/syn-041.pdf",
+    "truth": "data/synthetic/train/syn-041.truth.json"
+  },
+  {
+    "id": "syn-042",
+    "split": "train",
+    "tags": [
+      "tbd"
+    ],
+    "mode": "typed_pdf",
+    "source": "data/synthetic/train/syn-042.pdf",
+    "truth": "data/synthetic/train/syn-042.truth.json"
+  },
+  {
+    "id": "syn-043",
+    "split": "train",
+    "tags": [
+      "ambiguous_date"
+    ],
+    "mode": "aia_style_pdf",
+    "source": "data/synthetic/train/syn-043.pdf",
+    "truth": "data/synthetic/train/syn-043.truth.json"
+  },
+  {
+    "id": "syn-044",
+    "split": "train",
+    "tags": [
+      "european_numbers"
+    ],
+    "mode": "email_text",
+    "source": "data/synthetic/train/syn-044.txt",
+    "truth": "data/synthetic/train/syn-044.truth.json"
+  },
+  {
+    "id": "syn-045",
+    "split": "train",
+    "tags": [
+      "non_summing"
+    ],
+    "mode": "multi_page_pdf",
+    "source": "data/synthetic/train/syn-045.pdf",
+    "truth": "data/synthetic/train/syn-045.truth.json"
+  },
+  {
+    "id": "syn-046",
+    "split": "train",
+    "tags": [
+      "superseded_revision"
+    ],
+    "mode": "scanned_pdf",
+    "source": "data/synthetic/train/syn-046.pdf",
+    "truth": "data/synthetic/train/syn-046.truth.json"
+  },
+  {
+    "id": "syn-047",
+    "split": "train",
+    "tags": [
+      "missing_fields"
+    ],
+    "mode": "pasted_txt",
+    "source": "data/synthetic/train/syn-047.txt",
+    "truth": "data/synthetic/train/syn-047.truth.json"
+  },
+  {
+    "id": "syn-048",
+    "split": "train",
+    "tags": [
+      "ocr_typos"
+    ],
+    "mode": "two_orders_pdf",
+    "source": "data/synthetic/train/syn-048.pdf",
+    "truth": "data/synthetic/train/syn-048.truth.json"
+  },
+  {
+    "id": "syn-049",
+    "split": "train",
+    "tags": [
+      "distractor_numbers"
+    ],
+    "mode": "typed_pdf",
+    "source": "data/synthetic/train/syn-049.pdf",
+    "truth": "data/synthetic/train/syn-049.truth.json"
+  },
+  {
+    "id": "syn-050",
+    "split": "train",
+    "tags": [
+      "prompt_injection"
+    ],
+    "mode": "aia_style_pdf",
+    "source": "data/synthetic/train/syn-050.pdf",
+    "truth": "data/synthetic/train/syn-050.truth.json"
+  },
+  {
+    "id": "syn-051",
+    "split": "train",
+    "tags": [
+      "pii"
+    ],
+    "mode": "email_text",
+    "source": "data/synthetic/train/syn-051.txt",
+    "truth": "data/synthetic/train/syn-051.truth.json"
+  },
+  {
+    "id": "syn-052",
+    "split": "train",
+    "tags": [
+      "negative_parentheses"
+    ],
+    "mode": "multi_page_pdf",
+    "source": "data/synthetic/train/syn-052.pdf",
+    "truth": "data/synthetic/train/syn-052.truth.json"
+  },
+  {
+    "id": "syn-053",
+    "split": "train",
+    "tags": [
+      "negative_minus"
+    ],
+    "mode": "scanned_pdf",
+    "source": "data/synthetic/train/syn-053.pdf",
+    "truth": "data/synthetic/train/syn-053.truth.json"
+  },
+  {
+    "id": "syn-054",
+    "split": "train",
+    "tags": [
+      "negative_credit"
+    ],
+    "mode": "pasted_txt",
+    "source": "data/synthetic/train/syn-054.txt",
+    "truth": "data/synthetic/train/syn-054.truth.json"
+  },
+  {
+    "id": "syn-055",
+    "split": "train",
+    "tags": [
+      "tbd"
+    ],
+    "mode": "two_orders_pdf",
+    "source": "data/synthetic/train/syn-055.pdf",
+    "truth": "data/synthetic/train/syn-055.truth.json"
+  },
+  {
+    "id": "syn-056",
+    "split": "train",
+    "tags": [
+      "ambiguous_date"
+    ],
+    "mode": "typed_pdf",
+    "source": "data/synthetic/train/syn-056.pdf",
+    "truth": "data/synthetic/train/syn-056.truth.json"
+  },
+  {
+    "id": "syn-057",
+    "split": "train",
+    "tags": [
+      "european_numbers"
+    ],
+    "mode": "aia_style_pdf",
+    "source": "data/synthetic/train/syn-057.pdf",
+    "truth": "data/synthetic/train/syn-057.truth.json"
+  },
+  {
+    "id": "syn-058",
+    "split": "train",
+    "tags": [
+      "non_summing"
+    ],
+    "mode": "email_text",
+    "source": "data/synthetic/train/syn-058.txt",
+    "truth": "data/synthetic/train/syn-058.truth.json"
+  },
+  {
+    "id": "syn-059",
+    "split": "train",
+    "tags": [
+      "superseded_revision"
+    ],
+    "mode": "multi_page_pdf",
+    "source": "data/synthetic/train/syn-059.pdf",
+    "truth": "data/synthetic/train/syn-059.truth.json"
+  },
+  {
+    "id": "syn-060",
+    "split": "dev",
+    "tags": [
+      "missing_fields"
+    ],
+    "mode": "scanned_pdf",
+    "source": "data/synthetic/dev/syn-060.pdf",
+    "truth": "data/synthetic/dev/syn-060.truth.json"
+  },
+  {
+    "id": "syn-061",
+    "split": "dev",
+    "tags": [
+      "ocr_typos"
+    ],
+    "mode": "pasted_txt",
+    "source": "data/synthetic/dev/syn-061.txt",
+    "truth": "data/synthetic/dev/syn-061.truth.json"
+  },
+  {
+    "id": "syn-062",
+    "split": "dev",
+    "tags": [
+      "distractor_numbers"
+    ],
+    "mode": "two_orders_pdf",
+    "source": "data/synthetic/dev/syn-062.pdf",
+    "truth": "data/synthetic/dev/syn-062.truth.json"
+  },
+  {
+    "id": "syn-063",
+    "split": "dev",
+    "tags": [
+      "prompt_injection"
+    ],
+    "mode": "typed_pdf",
+    "source": "data/synthetic/dev/syn-063.pdf",
+    "truth": "data/synthetic/dev/syn-063.truth.json"
+  },
+  {
+    "id": "syn-064",
+    "split": "dev",
+    "tags": [
+      "pii"
+    ],
+    "mode": "aia_style_pdf",
+    "source": "data/synthetic/dev/syn-064.pdf",
+    "truth": "data/synthetic/dev/syn-064.truth.json"
+  },
+  {
+    "id": "syn-065",
+    "split": "dev",
+    "tags": [
+      "negative_parentheses"
+    ],
+    "mode": "email_text",
+    "source": "data/synthetic/dev/syn-065.txt",
+    "truth": "data/synthetic/dev/syn-065.truth.json"
+  },
+  {
+    "id": "syn-066",
+    "split": "dev",
+    "tags": [
+      "negative_minus"
+    ],
+    "mode": "multi_page_pdf",
+    "source": "data/synthetic/dev/syn-066.pdf",
+    "truth": "data/synthetic/dev/syn-066.truth.json"
+  },
+  {
+    "id": "syn-067",
+    "split": "dev",
+    "tags": [
+      "negative_credit"
+    ],
+    "mode": "scanned_pdf",
+    "source": "data/synthetic/dev/syn-067.pdf",
+    "truth": "data/synthetic/dev/syn-067.truth.json"
+  },
+  {
+    "id": "syn-068",
+    "split": "dev",
+    "tags": [
+      "tbd"
+    ],
+    "mode": "pasted_txt",
+    "source": "data/synthetic/dev/syn-068.txt",
+    "truth": "data/synthetic/dev/syn-068.truth.json"
+  },
+  {
+    "id": "syn-069",
+    "split": "dev",
+    "tags": [
+      "ambiguous_date"
+    ],
+    "mode": "two_orders_pdf",
+    "source": "data/synthetic/dev/syn-069.pdf",
+    "truth": "data/synthetic/dev/syn-069.truth.json"
+  },
+  {
+    "id": "syn-070",
+    "split": "dev",
+    "tags": [
+      "european_numbers"
+    ],
+    "mode": "typed_pdf",
+    "source": "data/synthetic/dev/syn-070.pdf",
+    "truth": "data/synthetic/dev/syn-070.truth.json"
+  },
+  {
+    "id": "syn-071",
+    "split": "dev",
+    "tags": [
+      "non_summing"
+    ],
+    "mode": "aia_style_pdf",
+    "source": "data/synthetic/dev/syn-071.pdf",
+    "truth": "data/synthetic/dev/syn-071.truth.json"
+  },
+  {
+    "id": "syn-072",
+    "split": "dev",
+    "tags": [
+      "superseded_revision"
+    ],
+    "mode": "email_text",
+    "source": "data/synthetic/dev/syn-072.txt",
+    "truth": "data/synthetic/dev/syn-072.truth.json"
+  },
+  {
+    "id": "syn-073",
+    "split": "dev",
+    "tags": [
+      "missing_fields"
+    ],
+    "mode": "multi_page_pdf",
+    "source": "data/synthetic/dev/syn-073.pdf",
+    "truth": "data/synthetic/dev/syn-073.truth.json"
+  },
+  {
+    "id": "syn-074",
+    "split": "dev",
+    "tags": [
+      "ocr_typos"
+    ],
+    "mode": "scanned_pdf",
+    "source": "data/synthetic/dev/syn-074.pdf",
+    "truth": "data/synthetic/dev/syn-074.truth.json"
+  },
+  {
+    "id": "syn-075",
+    "split": "dev",
+    "tags": [
+      "distractor_numbers"
+    ],
+    "mode": "pasted_txt",
+    "source": "data/synthetic/dev/syn-075.txt",
+    "truth": "data/synthetic/dev/syn-075.truth.json"
+  },
+  {
+    "id": "syn-076",
+    "split": "dev",
+    "tags": [
+      "prompt_injection"
+    ],
+    "mode": "two_orders_pdf",
+    "source": "data/synthetic/dev/syn-076.pdf",
+    "truth": "data/synthetic/dev/syn-076.truth.json"
+  },
+  {
+    "id": "syn-077",
+    "split": "dev",
+    "tags": [
+      "pii"
+    ],
+    "mode": "typed_pdf",
+    "source": "data/synthetic/dev/syn-077.pdf",
+    "truth": "data/synthetic/dev/syn-077.truth.json"
+  },
+  {
+    "id": "syn-078",
+    "split": "dev",
+    "tags": [
+      "negative_parentheses"
+    ],
+    "mode": "aia_style_pdf",
+    "source": "data/synthetic/dev/syn-078.pdf",
+    "truth": "data/synthetic/dev/syn-078.truth.json"
+  },
+  {
+    "id": "syn-079",
+    "split": "dev",
+    "tags": [
+      "negative_minus"
+    ],
+    "mode": "email_text",
+    "source": "data/synthetic/dev/syn-079.txt",
+    "truth": "data/synthetic/dev/syn-079.truth.json"
+  },
+  {
+    "id": "syn-080",
+    "split": "test",
+    "tags": [
+      "negative_credit"
+    ],
+    "mode": "multi_page_pdf",
+    "source": "data/synthetic/test/syn-080.pdf",
+    "truth": "data/synthetic/test/syn-080.truth.json"
+  },
+  {
+    "id": "syn-081",
+    "split": "test",
+    "tags": [
+      "tbd"
+    ],
+    "mode": "scanned_pdf",
+    "source": "data/synthetic/test/syn-081.pdf",
+    "truth": "data/synthetic/test/syn-081.truth.json"
+  },
+  {
+    "id": "syn-082",
+    "split": "test",
+    "tags": [
+      "ambiguous_date"
+    ],
+    "mode": "pasted_txt",
+    "source": "data/synthetic/test/syn-082.txt",
+    "truth": "data/synthetic/test/syn-082.truth.json"
+  },
+  {
+    "id": "syn-083",
+    "split": "test",
+    "tags": [
+      "european_numbers"
+    ],
+    "mode": "two_orders_pdf",
+    "source": "data/synthetic/test/syn-083.pdf",
+    "truth": "data/synthetic/test/syn-083.truth.json"
+  },
+  {
+    "id": "syn-084",
+    "split": "test",
+    "tags": [
+      "non_summing"
+    ],
+    "mode": "typed_pdf",
+    "source": "data/synthetic/test/syn-084.pdf",
+    "truth": "data/synthetic/test/syn-084.truth.json"
+  },
+  {
+    "id": "syn-085",
+    "split": "test",
+    "tags": [
+      "superseded_revision"
+    ],
+    "mode": "aia_style_pdf",
+    "source": "data/synthetic/test/syn-085.pdf",
+    "truth": "data/synthetic/test/syn-085.truth.json"
+  },
+  {
+    "id": "syn-086",
+    "split": "test",
+    "tags": [
+      "missing_fields"
+    ],
+    "mode": "email_text",
+    "source": "data/synthetic/test/syn-086.txt",
+    "truth": "data/synthetic/test/syn-086.truth.json"
+  },
+  {
+    "id": "syn-087",
+    "split": "test",
+    "tags": [
+      "ocr_typos"
+    ],
+    "mode": "multi_page_pdf",
+    "source": "data/synthetic/test/syn-087.pdf",
+    "truth": "data/synthetic/test/syn-087.truth.json"
+  },
+  {
+    "id": "syn-088",
+    "split": "test",
+    "tags": [
+      "distractor_numbers"
+    ],
+    "mode": "scanned_pdf",
+    "source": "data/synthetic/test/syn-088.pdf",
+    "truth": "data/synthetic/test/syn-088.truth.json"
+  },
+  {
+    "id": "syn-089",
+    "split": "test",
+    "tags": [
+      "prompt_injection"
+    ],
+    "mode": "pasted_txt",
+    "source": "data/synthetic/test/syn-089.txt",
+    "truth": "data/synthetic/test/syn-089.truth.json"
+  },
+  {
+    "id": "syn-090",
+    "split": "test",
+    "tags": [
+      "pii"
+    ],
+    "mode": "two_orders_pdf",
+    "source": "data/synthetic/test/syn-090.pdf",
+    "truth": "data/synthetic/test/syn-090.truth.json"
+  },
+  {
+    "id": "syn-091",
+    "split": "test",
+    "tags": [
+      "negative_parentheses"
+    ],
+    "mode": "typed_pdf",
+    "source": "data/synthetic/test/syn-091.pdf",
+    "truth": "data/synthetic/test/syn-091.truth.json"
+  },
+  {
+    "id": "syn-092",
+    "split": "test",
+    "tags": [
+      "negative_minus"
+    ],
+    "mode": "aia_style_pdf",
+    "source": "data/synthetic/test/syn-092.pdf",
+    "truth": "data/synthetic/test/syn-092.truth.json"
+  },
+  {
+    "id": "syn-093",
+    "split": "test",
+    "tags": [
+      "negative_credit"
+    ],
+    "mode": "email_text",
+    "source": "data/synthetic/test/syn-093.txt",
+    "truth": "data/synthetic/test/syn-093.truth.json"
+  },
+  {
+    "id": "syn-094",
+    "split": "test",
+    "tags": [
+      "tbd"
+    ],
+    "mode": "multi_page_pdf",
+    "source": "data/synthetic/test/syn-094.pdf",
+    "truth": "data/synthetic/test/syn-094.truth.json"
+  },
+  {
+    "id": "syn-095",
+    "split": "test",
+    "tags": [
+      "ambiguous_date"
+    ],
+    "mode": "scanned_pdf",
+    "source": "data/synthetic/test/syn-095.pdf",
+    "truth": "data/synthetic/test/syn-095.truth.json"
+  },
+  {
+    "id": "syn-096",
+    "split": "test",
+    "tags": [
+      "european_numbers"
+    ],
+    "mode": "pasted_txt",
+    "source": "data/synthetic/test/syn-096.txt",
+    "truth": "data/synthetic/test/syn-096.truth.json"
+  },
+  {
+    "id": "syn-097",
+    "split": "test",
+    "tags": [
+      "non_summing"
+    ],
+    "mode": "two_orders_pdf",
+    "source": "data/synthetic/test/syn-097.pdf",
+    "truth": "data/synthetic/test/syn-097.truth.json"
+  },
+  {
+    "id": "syn-098",
+    "split": "test",
+    "tags": [
+      "superseded_revision"
+    ],
+    "mode": "typed_pdf",
+    "source": "data/synthetic/test/syn-098.pdf",
+    "truth": "data/synthetic/test/syn-098.truth.json"
+  },
+  {
+    "id": "syn-099",
+    "split": "test",
+    "tags": [
+      "missing_fields"
+    ],
+    "mode": "aia_style_pdf",
+    "source": "data/synthetic/test/syn-099.pdf",
+    "truth": "data/synthetic/test/syn-099.truth.json"
+  },
+  {
+    "id": "syn-100",
+    "split": "test",
+    "tags": [
+      "ocr_typos"
+    ],
+    "mode": "email_text",
+    "source": "data/synthetic/test/syn-100.txt",
+    "truth": "data/synthetic/test/syn-100.truth.json"
+  },
+  {
+    "id": "syn-101",
+    "split": "test",
+    "tags": [
+      "distractor_numbers"
+    ],
+    "mode": "multi_page_pdf",
+    "source": "data/synthetic/test/syn-101.pdf",
+    "truth": "data/synthetic/test/syn-101.truth.json"
+  },
+  {
+    "id": "syn-102",
+    "split": "test",
+    "tags": [
+      "prompt_injection"
+    ],
+    "mode": "scanned_pdf",
+    "source": "data/synthetic/test/syn-102.pdf",
+    "truth": "data/synthetic/test/syn-102.truth.json"
+  },
+  {
+    "id": "syn-103",
+    "split": "test",
+    "tags": [
+      "pii"
+    ],
+    "mode": "pasted_txt",
+    "source": "data/synthetic/test/syn-103.txt",
+    "truth": "data/synthetic/test/syn-103.truth.json"
+  },
+  {
+    "id": "syn-104",
+    "split": "test",
+    "tags": [
+      "negative_parentheses"
+    ],
+    "mode": "two_orders_pdf",
+    "source": "data/synthetic/test/syn-104.pdf",
+    "truth": "data/synthetic/test/syn-104.truth.json"
+  },
+  {
+    "id": "syn-105",
+    "split": "test",
+    "tags": [
+      "negative_minus"
+    ],
+    "mode": "typed_pdf",
+    "source": "data/synthetic/test/syn-105.pdf",
+    "truth": "data/synthetic/test/syn-105.truth.json"
+  },
+  {
+    "id": "syn-106",
+    "split": "test",
+    "tags": [
+      "negative_credit"
+    ],
+    "mode": "aia_style_pdf",
+    "source": "data/synthetic/test/syn-106.pdf",
+    "truth": "data/synthetic/test/syn-106.truth.json"
+  },
+  {
+    "id": "syn-107",
+    "split": "test",
+    "tags": [
+      "tbd"
+    ],
+    "mode": "email_text",
+    "source": "data/synthetic/test/syn-107.txt",
+    "truth": "data/synthetic/test/syn-107.truth.json"
+  },
+  {
+    "id": "syn-108",
+    "split": "test",
+    "tags": [
+      "ambiguous_date"
+    ],
+    "mode": "multi_page_pdf",
+    "source": "data/synthetic/test/syn-108.pdf",
+    "truth": "data/synthetic/test/syn-108.truth.json"
+  },
+  {
+    "id": "syn-109",
+    "split": "test",
+    "tags": [
+      "european_numbers"
+    ],
+    "mode": "scanned_pdf",
+    "source": "data/synthetic/test/syn-109.pdf",
+    "truth": "data/synthetic/test/syn-109.truth.json"
+  },
+  {
+    "id": "syn-110",
+    "split": "test",
+    "tags": [
+      "non_summing"
+    ],
+    "mode": "pasted_txt",
+    "source": "data/synthetic/test/syn-110.txt",
+    "truth": "data/synthetic/test/syn-110.truth.json"
+  },
+  {
+    "id": "syn-111",
+    "split": "test",
+    "tags": [
+      "superseded_revision"
+    ],
+    "mode": "two_orders_pdf",
+    "source": "data/synthetic/test/syn-111.pdf",
+    "truth": "data/synthetic/test/syn-111.truth.json"
+  },
+  {
+    "id": "syn-112",
+    "split": "test",
+    "tags": [
+      "missing_fields"
+    ],
+    "mode": "typed_pdf",
+    "source": "data/synthetic/test/syn-112.pdf",
+    "truth": "data/synthetic/test/syn-112.truth.json"
+  },
+  {
+    "id": "syn-113",
+    "split": "test",
+    "tags": [
+      "ocr_typos"
+    ],
+    "mode": "aia_style_pdf",
+    "source": "data/synthetic/test/syn-113.pdf",
+    "truth": "data/synthetic/test/syn-113.truth.json"
+  },
+  {
+    "id": "syn-114",
+    "split": "test",
+    "tags": [
+      "distractor_numbers"
+    ],
+    "mode": "email_text",
+    "source": "data/synthetic/test/syn-114.txt",
+    "truth": "data/synthetic/test/syn-114.truth.json"
+  },
+  {
+    "id": "syn-115",
+    "split": "test",
+    "tags": [
+      "prompt_injection"
+    ],
+    "mode": "multi_page_pdf",
+    "source": "data/synthetic/test/syn-115.pdf",
+    "truth": "data/synthetic/test/syn-115.truth.json"
+  },
+  {
+    "id": "syn-116",
+    "split": "test",
+    "tags": [
+      "pii"
+    ],
+    "mode": "scanned_pdf",
+    "source": "data/synthetic/test/syn-116.pdf",
+    "truth": "data/synthetic/test/syn-116.truth.json"
+  },
+  {
+    "id": "syn-117",
+    "split": "test",
+    "tags": [
+      "negative_parentheses"
+    ],
+    "mode": "pasted_txt",
+    "source": "data/synthetic/test/syn-117.txt",
+    "truth": "data/synthetic/test/syn-117.truth.json"
+  },
+  {
+    "id": "syn-118",
+    "split": "test",
+    "tags": [
+      "negative_minus"
+    ],
+    "mode": "two_orders_pdf",
+    "source": "data/synthetic/test/syn-118.pdf",
+    "truth": "data/synthetic/test/syn-118.truth.json"
+  },
+  {
+    "id": "syn-119",
+    "split": "test",
+    "tags": [
+      "negative_credit"
+    ],
+    "mode": "typed_pdf",
+    "source": "data/synthetic/test/syn-119.pdf",
+    "truth": "data/synthetic/test/syn-119.truth.json"
+  }
+]

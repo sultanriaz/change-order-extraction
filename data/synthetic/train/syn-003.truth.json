@@ -1,0 +1,39 @@
+{
+  "orders": [
+    {
+      "change_order_number": "CO-0004",
+      "project_name": "Harbor Library Expansion",
+      "project_number": "P-2003",
+      "contract_number": "CT-103",
+      "revision_number": "Rev A",
+      "date_issued": "2026-08-17",
+      "owner": "North District Facilities",
+      "contractor": "Sample Ridge Builders",
+      "title": "Structural beam adjustment",
+      "description": "Adjust beam framing at bay 4",
+      "reason": "owner_request",
+      "change_type": "additive",
+      "subtotal": null,
+      "markup": 0.0,
+      "tax": 0.0,
+      "total_amount": null,
+      "currency": "USD",
+      "original_contract_sum": 100000.0,
+      "revised_contract_sum": null,
+      "schedule_impact_days": 0,
+      "original_completion_date": "2026-12-01",
+      "new_completion_date": "2026-12-01",
+      "status": "pending",
+      "line_items": [
+        {
+          "description": "Structural steel",
+          "quantity": 1.0,
+          "unit": "LS",
+          "unit_cost": null,
+          "amount": null,
+          "cost_code": "05-100"
+        }
+      ]
+    }
+  ]
+}

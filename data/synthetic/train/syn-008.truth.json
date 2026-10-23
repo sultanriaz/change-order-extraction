@@ -1,0 +1,39 @@
+{
+  "orders": [
+    {
+      "change_order_number": "CO-0009",
+      "project_name": "East Annex Retrofit",
+      "project_number": "P-2008",
+      "contract_number": "CT-108",
+      "revision_number": "Rev A",
+      "date_issued": null,
+      "owner": "North District Facilities",
+      "contractor": null,
+      "title": null,
+      "description": "Adjust beam framing at bay 4",
+      "reason": "owner_request",
+      "change_type": "additive",
+      "subtotal": 2650.0,
+      "markup": 0.0,
+      "tax": 0.0,
+      "total_amount": 2650.0,
+      "currency": "USD",
+      "original_contract_sum": 100000.0,
+      "revised_contract_sum": 102650.0,
+      "schedule_impact_days": 0,
+      "original_completion_date": "2026-12-01",
+      "new_completion_date": "2026-12-01",
+      "status": "pending",
+      "line_items": [
+        {
+          "description": "Structural steel",
+          "quantity": 1.0,
+          "unit": "LS",
+          "unit_cost": 2650.0,
+          "amount": 2650.0,
+          "cost_code": "05-100"
+        }
+      ]
+    }
+  ]
+}
