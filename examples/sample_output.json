@@ -1,0 +1,307 @@
+{
+  "orders": [
+    {
+      "project_name": {
+        "value": "Harbor Library Expansion",
+        "normalized_value": "Harbor Library Expansion",
+        "confidence": 0.9367,
+        "evidence": "Project Name: Harbor Library Expansion",
+        "page": 1,
+        "flags": [],
+        "model_confidence": 0.6
+      },
+      "project_number": {
+        "value": "P-2123",
+        "normalized_value": "P-2123",
+        "confidence": 0.9367,
+        "evidence": "Project Number: P-2123",
+        "page": 1,
+        "flags": [],
+        "model_confidence": 0.6
+      },
+      "change_order_number": {
+        "value": "CO-0124",
+        "normalized_value": "CO-0124",
+        "confidence": 0.9367,
+        "evidence": "Change Order Number: CO-0124",
+        "page": 1,
+        "flags": [],
+        "model_confidence": 0.6
+      },
+      "contract_number": {
+        "value": "CT-223",
+        "normalized_value": "CT-223",
+        "confidence": 0.9367,
+        "evidence": "Contract Number: CT-223",
+        "page": 1,
+        "flags": [],
+        "model_confidence": 0.6
+      },
+      "revision_number": {
+        "value": "Rev A",
+        "normalized_value": "Rev A",
+        "confidence": 0.9367,
+        "evidence": "Revision Number: Rev A",
+        "page": 1,
+        "flags": [],
+        "model_confidence": 0.6
+      },
+      "date_issued": {
+        "value": "2026-08-17",
+        "normalized_value": "2026-08-17",
+        "confidence": 0.9367,
+        "evidence": "Date Issued: 2026-08-17",
+        "page": 1,
+        "flags": [],
+        "model_confidence": 0.6
+      },
+      "owner": {
+        "value": "North District Facilities",
+        "normalized_value": "North District Facilities",
+        "confidence": 0.9367,
+        "evidence": "Owner: North District Facilities",
+        "page": 1,
+        "flags": [],
+        "model_confidence": 0.6
+      },
+      "contractor": {
+        "value": "Sample Ridge Builders",
+        "normalized_value": "Sample Ridge Builders",
+        "confidence": 0.9367,
+        "evidence": "Contractor: Sample Ridge Builders",
+        "page": 1,
+        "flags": [],
+        "model_confidence": 0.6
+      },
+      "architect_or_engineer": {
+        "value": null,
+        "normalized_value": null,
+        "confidence": 0.0,
+        "evidence": null,
+        "page": null,
+        "flags": [],
+        "model_confidence": null
+      },
+      "requested_by": {
+        "value": null,
+        "normalized_value": null,
+        "confidence": 0.0,
+        "evidence": null,
+        "page": null,
+        "flags": [],
+        "model_confidence": null
+      },
+      "title": {
+        "value": "Structural beam adjustment",
+        "normalized_value": "Structural beam adjustment",
+        "confidence": 0.9367,
+        "evidence": "Title: Structural beam adjustment",
+        "page": 1,
+        "flags": [],
+        "model_confidence": 0.6
+      },
+      "description": {
+        "value": "Adjust beam framing at bay 4",
+        "normalized_value": "Adjust beam framing at bay 4",
+        "confidence": 0.9367,
+        "evidence": "Description: Adjust beam framing at bay 4",
+        "page": 1,
+        "flags": [],
+        "model_confidence": 0.6
+      },
+      "reason": {
+        "value": "owner_request",
+        "normalized_value": "owner_request",
+        "confidence": 0.9367,
+        "evidence": "Reason: owner_request",
+        "page": 1,
+        "flags": [],
+        "model_confidence": 0.6
+      },
+      "change_type": {
+        "value": "additive",
+        "normalized_value": "additive",
+        "confidence": 0.9367,
+        "evidence": "Change Type: additive",
+        "page": 1,
+        "flags": [],
+        "model_confidence": 0.6
+      },
+      "line_items": [
+        {
+          "description": {
+            "value": "Structural steel",
+            "normalized_value": "Structural steel",
+            "confidence": 0.9367,
+            "evidence": "Item: Structural steel | Qty: 1 | Unit: LS | Unit Cost: $2,300.00 | Amount: $2,300.00 | Code: 05-100",
+            "page": 1,
+            "flags": [],
+            "model_confidence": 0.6
+          },
+          "quantity": {
+            "value": 1.0,
+            "normalized_value": 1.0,
+            "confidence": 0.9367,
+            "evidence": "Item: Structural steel | Qty: 1 | Unit: LS | Unit Cost: $2,300.00 | Amount: $2,300.00 | Code: 05-100",
+            "page": 1,
+            "flags": [],
+            "model_confidence": 0.6
+          },
+          "unit": {
+            "value": "LS",
+            "normalized_value": "LS",
+            "confidence": 0.9367,
+            "evidence": "Item: Structural steel | Qty: 1 | Unit: LS | Unit Cost: $2,300.00 | Amount: $2,300.00 | Code: 05-100",
+            "page": 1,
+            "flags": [],
+            "model_confidence": 0.6
+          },
+          "unit_cost": {
+            "value": 2300.0,
+            "normalized_value": 2300.0,
+            "confidence": 0.9367,
+            "evidence": "Item: Structural steel | Qty: 1 | Unit: LS | Unit Cost: $2,300.00 | Amount: $2,300.00 | Code: 05-100",
+            "page": 1,
+            "flags": [],
+            "model_confidence": 0.6
+          },
+          "amount": {
+            "value": 2300.0,
+            "normalized_value": 2300.0,
+            "confidence": 0.9367,
+            "evidence": "Item: Structural steel | Qty: 1 | Unit: LS | Unit Cost: $2,300.00 | Amount: $2,300.00 | Code: 05-100",
+            "page": 1,
+            "flags": [],
+            "model_confidence": 0.6
+          },
+          "cost_code": {
+            "value": "05-100",
+            "normalized_value": "05-100",
+            "confidence": 0.9367,
+            "evidence": "Item: Structural steel | Qty: 1 | Unit: LS | Unit Cost: $2,300.00 | Amount: $2,300.00 | Code: 05-100",
+            "page": 1,
+            "flags": [],
+            "model_confidence": 0.6
+          }
+        }
+      ],
+      "subtotal": {
+        "value": 2300.0,
+        "normalized_value": 2300.0,
+        "confidence": 0.9367,
+        "evidence": "Subtotal: $2,300.00",
+        "page": 1,
+        "flags": [],
+        "model_confidence": 0.6
+      },
+      "markup": {
+        "value": 0.0,
+        "normalized_value": 0.0,
+        "confidence": 0.9367,
+        "evidence": "Markup: $0.00",
+        "page": 1,
+        "flags": [],
+        "model_confidence": 0.6
+      },
+      "tax": {
+        "value": 0.0,
+        "normalized_value": 0.0,
+        "confidence": 0.9367,
+        "evidence": "Tax: $0.00",
+        "page": 1,
+        "flags": [],
+        "model_confidence": 0.6
+      },
+      "total_amount": {
+        "value": 2300.0,
+        "normalized_value": 2300.0,
+        "confidence": 0.9367,
+        "evidence": "Total Amount: $2,300.00",
+        "page": 1,
+        "flags": [],
+        "model_confidence": 0.6
+      },
+      "currency": {
+        "value": "USD",
+        "normalized_value": "USD",
+        "confidence": 0.9367,
+        "evidence": "Currency: USD",
+        "page": 1,
+        "flags": [],
+        "model_confidence": 0.6
+      },
+      "original_contract_sum": {
+        "value": 100000.0,
+        "normalized_value": 100000.0,
+        "confidence": 0.9367,
+        "evidence": "Original Contract Sum: $100,000.00",
+        "page": 1,
+        "flags": [],
+        "model_confidence": 0.6
+      },
+      "revised_contract_sum": {
+        "value": 102300.0,
+        "normalized_value": 102300.0,
+        "confidence": 0.9367,
+        "evidence": "Revised Contract Sum: $102,300.00",
+        "page": 1,
+        "flags": [],
+        "model_confidence": 0.6
+      },
+      "schedule_impact_days": {
+        "value": 0,
+        "normalized_value": 0,
+        "confidence": 0.9367,
+        "evidence": "Schedule Impact Days: 0",
+        "page": 1,
+        "flags": [],
+        "model_confidence": 0.6
+      },
+      "original_completion_date": {
+        "value": "2026-12-01",
+        "normalized_value": "2026-12-01",
+        "confidence": 0.9367,
+        "evidence": "Original Completion Date: 2026-12-01",
+        "page": 1,
+        "flags": [],
+        "model_confidence": 0.6
+      },
+      "new_completion_date": {
+        "value": "2026-12-01",
+        "normalized_value": "2026-12-01",
+        "confidence": 0.9367,
+        "evidence": "New Completion Date: 2026-12-01",
+        "page": 1,
+        "flags": [],
+        "model_confidence": 0.6
+      },
+      "status": {
+        "value": "pending",
+        "normalized_value": "pending",
+        "confidence": 0.9367,
+        "evidence": "Status: pending",
+        "page": 1,
+        "flags": [],
+        "model_confidence": 0.6
+      },
+      "signatures": []
+    }
+  ],
+  "document_confidence": 0.9367,
+  "needs_review": true,
+  "validation_report": [],
+  "warnings": [],
+  "metadata": {
+    "model": "mock-regex-v1",
+    "prompt_version": "co-extract-2026-10-v1",
+    "latency_ms": 62,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_estimate": 0.0,
+    "source_hash": "4d415268f6620e055ea68b1127e83fdae3765bf963def7fbd5818978bda079f8",
+    "pipeline_version": "0.1.0",
+    "trace_id": "1aae88e37f584950",
+    "cache_hit": false,
+    "confidence_mode": "dev_fitted"
+  }
+}
