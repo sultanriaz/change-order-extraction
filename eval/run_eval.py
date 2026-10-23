@@ -244,7 +244,6 @@ def run(*, mock: bool = True) -> dict:
     ]
     (report_file).write_text('\n'.join(lines) + '\n')
     return result_summary
-    return result_summary
 
 
 if __name__=='__main__':

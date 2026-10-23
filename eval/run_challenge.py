@@ -2,19 +2,24 @@
 from __future__ import annotations
 
 import json
+import sys
 from collections import defaultdict
 from pathlib import Path
 
 from co_extract.llm import GeminiClient, MockLLM
 from co_extract.pipeline import Pipeline
-from eval.metrics import align_orders, flatten, summarize, line_item_f1
+
+try:
+    from eval.metrics import align_orders, flatten, summarize, line_item_f1
+except ImportError:
+    from metrics import align_orders, flatten, summarize, line_item_f1
 
 ROOT = Path(__file__).resolve().parents[1]
 RESULTS = ROOT / "eval" / "results"
 CHALLENGE_DIR = ROOT / "data" / "challenge"
 
 
-def evaluate_challenge(*, mock: bool = False) -> dict:
+def evaluate_challenge(*, mock: bool = True) -> dict:
     RESULTS.mkdir(parents=True, exist_ok=True)
     manifest_path = CHALLENGE_DIR / "manifest.json"
     if not manifest_path.exists():
@@ -106,4 +111,5 @@ def evaluate_challenge(*, mock: bool = False) -> dict:
 
 
 if __name__ == "__main__":
-    print(json.dumps(evaluate_challenge(mock=False), indent=2))
+    is_live = "--live" in sys.argv
+    print(json.dumps(evaluate_challenge(mock=not is_live), indent=2))

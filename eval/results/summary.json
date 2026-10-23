@@ -304,18 +304,18 @@
     "hallucination_rate": 0.0,
     "n_rows": 1150
   },
-  "ece": 0.16043165537270082,
+  "ece": 0.16051819941916873,
   "reliability_bins": [
     {
       "bin": 1,
       "count": 133,
-      "confidence": 0.1595,
+      "confidence": 0.15950000000000022,
       "accuracy": 0.9774436090225563
     },
     {
       "bin": 9,
       "count": 900,
-      "confidence": 0.9367340000000001,
+      "confidence": 0.9366346666666652,
       "accuracy": 1.0
     }
   ],
@@ -609,8 +609,8 @@
       "n_rows": 150
     }
   },
-  "p50_latency_ms": 22.5,
-  "p95_latency_ms": 833,
+  "p50_latency_ms": 81.0,
+  "p95_latency_ms": 1319,
   "total_cost_estimate": 0.0,
   "reviewed": 40,
   "calibration": {
@@ -624,19 +624,19 @@
       "model_reported"
     ],
     "weights": [
-      -0.0007220606062857148,
-      -0.08949362957971221,
-      -0.0003610303031428574,
-      7.918983635220455,
-      -0.0004332363637531754
+      -4.6817183591790204e-05,
+      -0.08949432207964621,
+      -2.3408591795895102e-05,
+      7.918883857577833,
+      -2.3408591660355627e-05
     ],
-    "intercept": -5.134598642503269,
+    "intercept": -5.135699859837332,
     "review_threshold": 1.01,
     "dev_size": 519,
     "target_dev_precision": 0.95,
     "dev_document_autoaccepted": 0
   },
-  "offline_ablations": {
+  "ablations": {
     "no_grounding": {
       "field_f1": 0.9974937343358395,
       "mean_document_confidence": 0.702525,
@@ -646,7 +646,7 @@
     },
     "no_validation_retry": {
       "field_f1": 0.9974937343358395,
-      "mean_document_confidence": 0.702525,
+      "mean_document_confidence": 0.70245,
       "review_count": 8,
       "independent_llm_measurement": false,
       "n_documents": 8
@@ -660,7 +660,7 @@
     },
     "vision_bytes": {
       "field_f1": 0.9974937343358395,
-      "mean_document_confidence": 0.702525,
+      "mean_document_confidence": 0.70245,
       "review_count": 8,
       "independent_llm_measurement": false,
       "n_documents": 8

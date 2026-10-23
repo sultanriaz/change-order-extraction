@@ -6,7 +6,7 @@
       "negative_credit"
     ],
     "needs_review": true,
-    "confidence": 0.9367,
+    "confidence": 0.9366,
     "validation_issues": [],
     "warnings": [],
     "field_metrics": {
@@ -54,7 +54,7 @@
       "ambiguous_date"
     ],
     "needs_review": true,
-    "confidence": 0.9367,
+    "confidence": 0.9366,
     "validation_issues": [
       "ambiguous_date"
     ],
@@ -79,7 +79,7 @@
       "european_numbers"
     ],
     "needs_review": true,
-    "confidence": 0.9367,
+    "confidence": 0.9366,
     "validation_issues": [],
     "warnings": [],
     "field_metrics": {
@@ -102,7 +102,7 @@
       "non_summing"
     ],
     "needs_review": true,
-    "confidence": 0.9367,
+    "confidence": 0.9366,
     "validation_issues": [
       "arithmetic_mismatch",
       "arithmetic_mismatch"
@@ -128,7 +128,7 @@
       "superseded_revision"
     ],
     "needs_review": true,
-    "confidence": 0.9367,
+    "confidence": 0.9366,
     "validation_issues": [],
     "warnings": [],
     "field_metrics": {
@@ -174,7 +174,7 @@
       "ocr_typos"
     ],
     "needs_review": true,
-    "confidence": 0.9367,
+    "confidence": 0.9366,
     "validation_issues": [],
     "warnings": [],
     "field_metrics": {
@@ -232,7 +232,7 @@
       "prompt_injection"
     ],
     "needs_review": true,
-    "confidence": 0.9367,
+    "confidence": 0.9366,
     "validation_issues": [],
     "warnings": [
       "possible_prompt_injection"
@@ -257,7 +257,7 @@
       "pii"
     ],
     "needs_review": true,
-    "confidence": 0.9367,
+    "confidence": 0.9366,
     "validation_issues": [],
     "warnings": [],
     "field_metrics": {
@@ -280,7 +280,7 @@
       "negative_parentheses"
     ],
     "needs_review": true,
-    "confidence": 0.9367,
+    "confidence": 0.9366,
     "validation_issues": [],
     "warnings": [],
     "field_metrics": {
@@ -303,7 +303,7 @@
       "negative_minus"
     ],
     "needs_review": true,
-    "confidence": 0.9367,
+    "confidence": 0.9366,
     "validation_issues": [],
     "warnings": [],
     "field_metrics": {
@@ -326,7 +326,7 @@
       "negative_credit"
     ],
     "needs_review": true,
-    "confidence": 0.9367,
+    "confidence": 0.9366,
     "validation_issues": [],
     "warnings": [],
     "field_metrics": {
@@ -399,7 +399,7 @@
       "european_numbers"
     ],
     "needs_review": true,
-    "confidence": 0.9367,
+    "confidence": 0.9366,
     "validation_issues": [],
     "warnings": [],
     "field_metrics": {
@@ -422,7 +422,7 @@
       "non_summing"
     ],
     "needs_review": true,
-    "confidence": 0.9367,
+    "confidence": 0.9366,
     "validation_issues": [
       "arithmetic_mismatch",
       "arithmetic_mismatch"
@@ -448,7 +448,7 @@
       "superseded_revision"
     ],
     "needs_review": true,
-    "confidence": 0.9367,
+    "confidence": 0.9366,
     "validation_issues": [],
     "warnings": [],
     "field_metrics": {
@@ -494,7 +494,7 @@
       "ocr_typos"
     ],
     "needs_review": true,
-    "confidence": 0.9367,
+    "confidence": 0.9366,
     "validation_issues": [],
     "warnings": [],
     "field_metrics": {
@@ -523,7 +523,7 @@
       "distractor_numbers"
     ],
     "needs_review": true,
-    "confidence": 0.9367,
+    "confidence": 0.9366,
     "validation_issues": [],
     "warnings": [],
     "field_metrics": {
@@ -577,7 +577,7 @@
       "pii"
     ],
     "needs_review": true,
-    "confidence": 0.9367,
+    "confidence": 0.9366,
     "validation_issues": [],
     "warnings": [],
     "field_metrics": {
@@ -600,7 +600,7 @@
       "negative_parentheses"
     ],
     "needs_review": true,
-    "confidence": 0.9367,
+    "confidence": 0.9366,
     "validation_issues": [],
     "warnings": [],
     "field_metrics": {
@@ -623,7 +623,7 @@
       "negative_minus"
     ],
     "needs_review": true,
-    "confidence": 0.9367,
+    "confidence": 0.9366,
     "validation_issues": [],
     "warnings": [],
     "field_metrics": {
@@ -646,7 +646,7 @@
       "negative_credit"
     ],
     "needs_review": true,
-    "confidence": 0.9367,
+    "confidence": 0.9366,
     "validation_issues": [],
     "warnings": [],
     "field_metrics": {
@@ -694,7 +694,7 @@
       "ambiguous_date"
     ],
     "needs_review": true,
-    "confidence": 0.9367,
+    "confidence": 0.9366,
     "validation_issues": [
       "ambiguous_date"
     ],
@@ -748,7 +748,7 @@
       "non_summing"
     ],
     "needs_review": true,
-    "confidence": 0.9367,
+    "confidence": 0.9366,
     "validation_issues": [
       "arithmetic_mismatch",
       "arithmetic_mismatch"
@@ -774,7 +774,7 @@
       "superseded_revision"
     ],
     "needs_review": true,
-    "confidence": 0.9367,
+    "confidence": 0.9366,
     "validation_issues": [],
     "warnings": [],
     "field_metrics": {
@@ -820,7 +820,7 @@
       "ocr_typos"
     ],
     "needs_review": true,
-    "confidence": 0.9367,
+    "confidence": 0.9366,
     "validation_issues": [],
     "warnings": [],
     "field_metrics": {
@@ -849,7 +849,7 @@
       "distractor_numbers"
     ],
     "needs_review": true,
-    "confidence": 0.9367,
+    "confidence": 0.9366,
     "validation_issues": [],
     "warnings": [],
     "field_metrics": {
@@ -872,7 +872,7 @@
       "prompt_injection"
     ],
     "needs_review": true,
-    "confidence": 0.9367,
+    "confidence": 0.9366,
     "validation_issues": [],
     "warnings": [
       "possible_prompt_injection"
@@ -926,7 +926,7 @@
       "negative_parentheses"
     ],
     "needs_review": true,
-    "confidence": 0.9367,
+    "confidence": 0.9366,
     "validation_issues": [],
     "warnings": [],
     "field_metrics": {
@@ -949,7 +949,7 @@
       "negative_minus"
     ],
     "needs_review": true,
-    "confidence": 0.9367,
+    "confidence": 0.9366,
     "validation_issues": [],
     "warnings": [],
     "field_metrics": {
@@ -972,7 +972,7 @@
       "negative_credit"
     ],
     "needs_review": true,
-    "confidence": 0.9367,
+    "confidence": 0.9366,
     "validation_issues": [],
     "warnings": [],
     "field_metrics": {

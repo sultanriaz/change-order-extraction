@@ -19,3 +19,4 @@ matplotlib==3.10.5
 scikit-learn==1.7.1
 python-dateutil==2.9.0.post0
 pycountry==24.6.1
+python-dotenv>=1.0.0
