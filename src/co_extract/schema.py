@@ -3,35 +3,35 @@ from __future__ import annotations
 
 from typing import Literal
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 
 
 class StrField(BaseModel):
+    model_config = ConfigDict(extra="ignore")
     value: str | None = None
     evidence: str | None = None
     page: int | None = None
-    model_confidence: float | None = Field(default=None, ge=0, le=1)
 
 
 class FloatField(BaseModel):
+    model_config = ConfigDict(extra="ignore")
     value: float | None = None
     evidence: str | None = None
     page: int | None = None
-    model_confidence: float | None = Field(default=None, ge=0, le=1)
 
 
 class IntField(BaseModel):
+    model_config = ConfigDict(extra="ignore")
     value: int | None = None
     evidence: str | None = None
     page: int | None = None
-    model_confidence: float | None = Field(default=None, ge=0, le=1)
 
 
 class BoolField(BaseModel):
+    model_config = ConfigDict(extra="ignore")
     value: bool | None = None
     evidence: str | None = None
     page: int | None = None
-    model_confidence: float | None = Field(default=None, ge=0, le=1)
 
 
 class DateField(StrField):
@@ -43,6 +43,7 @@ class EnumField(StrField):
 
 
 class LLMLineItem(BaseModel):
+    model_config = ConfigDict(extra="ignore")
     description: StrField = Field(default_factory=StrField)
     quantity: FloatField = Field(default_factory=FloatField)
     unit: StrField = Field(default_factory=StrField)
@@ -52,6 +53,7 @@ class LLMLineItem(BaseModel):
 
 
 class LLMSignature(BaseModel):
+    model_config = ConfigDict(extra="ignore")
     name: StrField = Field(default_factory=StrField)
     role: StrField = Field(default_factory=StrField)
     date: DateField = Field(default_factory=DateField)
@@ -59,6 +61,7 @@ class LLMSignature(BaseModel):
 
 
 class LLMChangeOrder(BaseModel):
+    model_config = ConfigDict(extra="ignore")
     project_name: StrField = Field(default_factory=StrField)
     project_number: StrField = Field(default_factory=StrField)
     change_order_number: StrField = Field(default_factory=StrField)
@@ -89,6 +92,7 @@ class LLMChangeOrder(BaseModel):
 
 
 class LLMOutput(BaseModel):
+    model_config = ConfigDict(extra="ignore")
     orders: list[LLMChangeOrder] = Field(default_factory=list)
 
 

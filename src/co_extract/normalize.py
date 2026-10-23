@@ -4,7 +4,10 @@ from __future__ import annotations
 import datetime as dt
 import re
 
-import pycountry
+try:
+    import pycountry
+except ImportError:
+    pycountry = None
 
 from co_extract.schema import ChangeOrder, ExtractedField, iter_fields
 
@@ -82,9 +85,36 @@ def parse_date(value: str | None) -> tuple[str | None, bool]:
     return None, False
 
 
+ISO_4217_CODES = {
+    "AED", "AFN", "ALL", "AMD", "ANG", "AOA", "ARS", "AUD", "AWG", "AZN",
+    "BAM", "BBD", "BDT", "BGN", "BHD", "BIF", "BMD", "BND", "BOB", "BOV",
+    "BRL", "BSD", "BTN", "BWP", "BYN", "BZD", "CAD", "CDF", "CHE", "CHF",
+    "CHW", "CLF", "CLP", "CNY", "COP", "COU", "CRC", "CUC", "CUP", "CVE",
+    "CZK", "DJF", "DKK", "DOP", "DZD", "EGP", "ERN", "ETB", "EUR", "FJD",
+    "FKP", "GBP", "GEL", "GHS", "GIP", "GMD", "GNF", "GTQ", "GYD", "HKD",
+    "HNL", "HRK", "HTG", "HUF", "IDR", "ILS", "INR", "IQD", "IRR", "ISK",
+    "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRW", "KWD",
+    "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LYD", "MAD", "MDL",
+    "MGA", "MKD", "MMK", "MNT", "MOP", "MRU", "MUR", "MVR", "MWK", "MXN",
+    "MXV", "MYR", "MZN", "NAD", "NGN", "NIO", "NOK", "NPR", "NZD", "OMR",
+    "PAB", "PEN", "PGK", "PHP", "PKR", "PLN", "PYG", "QAR", "RON", "RSD",
+    "RUB", "RWF", "SAR", "SBD", "SCR", "SDG", "SEK", "SGD", "SHP", "SLE",
+    "SLL", "SOS", "SRD", "SSP", "STN", "SVC", "SYP", "SZL", "THB", "TJS",
+    "TMT", "TND", "TOP", "TRY", "TTD", "TWD", "TZS", "UAH", "UGX", "USD",
+    "USN", "UYI", "UYU", "UYW", "UZS", "VED", "VES", "VND", "VUV", "WST",
+    "XAF", "XCD", "XDR", "XOF", "XPD", "XPF", "XPT", "XSU", "XTS", "XUA",
+    "XXX", "YER", "ZAR", "ZMW", "ZWL",
+}
+
+
 def valid_currency(code: str | None) -> bool:
-    """Check ISO-4217 alpha-3 against locally packaged standard codes."""
-    return bool(code and pycountry.currencies.get(alpha_3=code.upper()))
+    """Check ISO-4217 alpha-3 against locally packaged standard codes or fallback registry."""
+    if not code:
+        return False
+    upper = code.upper()
+    if pycountry is not None:
+        return bool(pycountry.currencies.get(alpha_3=upper))
+    return upper in ISO_4217_CODES
 
 
 def normalize_field(name: str, item: ExtractedField) -> None:

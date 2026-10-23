@@ -12,10 +12,9 @@ and retain distinct line items across pages. Dates with ambiguous day/month must
 returned as seen, not guessed. Record reason/change_type/status ONLY when explicitly stated.
 Amounts must reflect stated document amounts even if arithmetic disagrees.
 Multiple contradictory candidates: leave ambiguous value null rather than choosing arbitrarily.
-All field model_confidence values are self-reported estimates, NOT calibrated.
 Example source: <document page="1">Change Order Number: CO-004\nTotal Amount: ($1,250.00)</document>
-Example value objects: change_order_number={"value":"CO-004","evidence":"Change Order Number: CO-004","page":1,"model_confidence":0.9};
-total_amount={"value":-1250.0,"evidence":"Total Amount: ($1,250.00)","page":1,"model_confidence":0.9}.
+Example value objects: change_order_number={"value":"CO-004","evidence":"Change Order Number: CO-004","page":1};
+total_amount={"value":-1250.0,"evidence":"Total Amount: ($1,250.00)","page":1}.
 """
 
 

@@ -164,7 +164,7 @@ def run(*, mock: bool = True) -> dict:
     (RESULTS/'summary.json').write_text(json.dumps(result_summary,indent=2))
     lines=['# Reproducible held-out TEST evaluation','',f'**Mode:** `{client.model_id}`',
            f'**Prompt version:** `{result_summary["prompt_version"]}`',
-           f'**Counts:** 60 training (not used in fit), 20 DEV (calibration only), 40 held-out TEST.', '',
+           '**Counts:** 60 training (not used in fit), 20 DEV (calibration only), 40 held-out TEST.', '',
            '> **Interpretation:** MockLLM is a regex heuristic test double, not Gemini. Its scores must not be sold as LLM model accuracy or predictive calibration. The baseline uses the SAME heuristic, so equal numbers are expected.', '',
            '| Test metric | Mock/actual selected model | Regex baseline |','|---|---:|---:|',
            f'| Field precision | {summary["precision"]:.4f} | {baseline_score["precision"]:.4f} |',
@@ -176,7 +176,7 @@ def run(*, mock: bool = True) -> dict:
            f'**ECE on extracted non-null TEST fields:** {ece_score:.4f} (10 fixed bins).',
            f'**Documents marked for review:** {result_summary["reviewed"]}/40.',
            f'**Latency p50/p95:** {result_summary["p50_latency_ms"]:.0f}/{result_summary["p95_latency_ms"]:.0f} ms; **cost estimate:** ${sum(cost):.6f} (assumed prices, not invoices).',
-           '',f'![Reliability diagram](reliability.png)','',
+           '','![Reliability diagram](reliability.png)','',
            '## Hard-case slices (actual TEST)','', '| Tag | N field rows | F1 |','|---|---:|---:|']
     for key,data in sorted(result_summary['by_tag'].items()):
         lines.append(f'| {key} | {data["n_rows"]} | {data["f1"]:.4f} |')
