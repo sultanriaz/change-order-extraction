@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import datetime as dt
 import re
+from typing import Literal
 
 from co_extract.normalize import CHANGE_TYPES, REASONS, STATUSES, valid_currency
 from co_extract.schema import ChangeOrder, ExtractedField, ValidationIssue
@@ -13,7 +14,7 @@ def validate_order(order: ChangeOrder, *, tolerance: float = 0.02) -> list[Valid
     issues: list[ValidationIssue] = []
 
     def emit(code: str, field: str, message: str, *, level: str = "warning") -> None:
-        severity = "error" if level == "error" else "warning"
+        severity: Literal["info", "warning", "error"] = "error" if level == "error" else "warning"
         issues.append(ValidationIssue(code=code, severity=severity, field=field, message=message))
         obj: ExtractedField | None = getattr(order, field, None)
         if isinstance(obj, ExtractedField) and code not in obj.flags:
@@ -39,9 +40,11 @@ def validate_order(order: ChangeOrder, *, tolerance: float = 0.02) -> list[Valid
                               len(re.sub(r"\D", "", str(ident))) >= 10):
         emit("suspicious_identifier", "change_order_number", "CO identifier resembles page/phone number")
 
-    sum_amounts = [item.amount.normalized_value for item in order.line_items]
-    if order.line_items and all(isinstance(v, (float, int)) for v in sum_amounts) and num("subtotal") is not None:
-        if mismatch(sum(float(v) for v in sum_amounts), num("subtotal") or 0):
+    item_amounts = [item.amount.normalized_value for item in order.line_items]
+    if order.line_items and all(isinstance(v, (float, int)) for v in item_amounts) and num("subtotal") is not None:
+        subtotal_val = num("subtotal") or 0.0
+        line_total = sum(float(v) for v in item_amounts if isinstance(v, (float, int)))
+        if mismatch(line_total, subtotal_val):
             emit("arithmetic_mismatch", "subtotal", "Line-item sum differs from document subtotal", level="error")
     for i, item in enumerate(order.line_items):
         q, unit, amt = (getattr(item, k).normalized_value for k in ("quantity", "unit_cost", "amount"))
@@ -52,7 +55,8 @@ def validate_order(order: ChangeOrder, *, tolerance: float = 0.02) -> list[Valid
     parts = [num(k) for k in ("subtotal", "markup", "tax")]
     total = num("total_amount")
     if all(v is not None for v in parts) and total is not None:
-        if mismatch(sum(float(v) for v in parts), total):
+        parts_sum = sum(float(v) for v in parts if v is not None)
+        if mismatch(parts_sum, total):
             emit("arithmetic_mismatch", "total_amount", "Subtotal + markup + tax differs from total", level="error")
     original, revised = num("original_contract_sum"), num("revised_contract_sum")
     if original is not None and revised is not None and total is not None and mismatch(original+total, revised):

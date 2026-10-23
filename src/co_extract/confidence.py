@@ -56,7 +56,7 @@ def predict(fs: list[float], params: dict | None) -> float:
 def score_orders(orders: list[ChangeOrder], document: Document, *, params: dict | None = None,
                  agreement: dict[str, float] | None = None, grounding_enabled: bool = True) -> float:
     """Populate scores and flags and return min-confidence across critical fields."""
-    critical_scores = []
+    critical_scores: list[float] = []
     for idx, order in enumerate(orders):
         for name, field in iter_fields(order):
             if field.value is None:

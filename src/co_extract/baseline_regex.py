@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import re
+from typing import Any
 
 from co_extract.normalize import parse_number
 from co_extract.schema import LLMChangeOrder, LLMOutput
@@ -42,7 +43,7 @@ def baseline(pages) -> LLMOutput:
         chunks = [(p.num, p.text) for p in pages if p.text.strip()]
     orders = []
     for pnum, chunk in chunks:
-        data = {}
+        data: dict[str, Any] = {}
         for name, label in LABELS.items():
             match = re.search(r'^\s*' + re.escape(label) + r':\s*(.+)$', chunk, flags=re.M | re.I)
             if not match:

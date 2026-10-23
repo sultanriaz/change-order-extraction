@@ -7,7 +7,7 @@ import re
 try:
     import pycountry
 except ImportError:
-    pycountry = None
+    pycountry = None  # type: ignore[assignment]
 
 from co_extract.schema import ChangeOrder, ExtractedField, iter_fields
 
