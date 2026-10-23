@@ -1,7 +1,6 @@
 """Fail-closed orchestration: ingestion -> extraction -> normalize -> validate -> confidence."""
 from __future__ import annotations
 
-import hashlib
 import time
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
@@ -11,10 +10,10 @@ from co_extract.config import Settings
 from co_extract.confidence import load_params, score_orders
 from co_extract.extract import extract_document
 from co_extract.ingest import load_document
-from co_extract.llm import LLMClient, ModelError
+from co_extract.llm import LLMClient
 from co_extract.normalize import normalize_order
 from co_extract.prompts import PROMPT_VERSION
-from co_extract.schema import DocumentResult, RunMetadata
+from co_extract.schema import DocumentResult, RunMetadata, iter_fields
 from co_extract.security import detect_injection, log_event
 from co_extract.validate import validate_order
 
@@ -62,7 +61,7 @@ class Pipeline:
             result.needs_review = (result.document_confidence < threshold or not orders or injected or
                                    bool(result.validation_report) or
                                    any('not_grounded' in f.flags or 'conflicting_candidates' in f.flags
-                                       for order in orders for _, f in __import__('co_extract.schema', fromlist=['iter_fields']).iter_fields(order)))
+                                       for order in orders for _, f in iter_fields(order)))
         except Exception as exc:
             result.needs_review = True
             # Do not copy exception messages: provider errors can include request contents.

@@ -1,0 +1,27 @@
+name: Offline CI
+on:
+  push:
+  pull_request:
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Install OCR system utilities
+        run: sudo apt-get update && sudo apt-get install -y tesseract-ocr poppler-utils
+      - name: Setup
+        run: make setup
+      - name: Lint
+        run: make lint
+      - name: Type-check
+        run: make typecheck
+      - name: Generate seeded corpus
+        run: make data
+      - name: Unit and integration checks (MockLLM; no keys)
+        run: make test
+      - name: Export schema
+        run: make schema

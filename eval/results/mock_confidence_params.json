@@ -1,0 +1,23 @@
+{
+  "model_id": "mock-regex-v1",
+  "calibrated": true,
+  "feature_names": [
+    "grounding",
+    "validation",
+    "agreement",
+    "source_quality",
+    "model_reported"
+  ],
+  "weights": [
+    -0.0007220606062857148,
+    -0.08949362957971221,
+    -0.0003610303031428574,
+    7.918983635220455,
+    -0.0004332363637531754
+  ],
+  "intercept": -5.134598642503269,
+  "review_threshold": 1.01,
+  "dev_size": 519,
+  "target_dev_precision": 0.95,
+  "dev_document_autoaccepted": 0
+}

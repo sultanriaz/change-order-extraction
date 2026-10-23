@@ -1,0 +1,337 @@
+{
+  "model": "mock-regex-v1",
+  "prompt_version": "co-extract-2026-10-v1",
+  "test_documents": 40,
+  "dev_documents": 20,
+  "field_metrics": {
+    "precision": 0.9970958373668926,
+    "recall": 0.9932497589199615,
+    "f1": 0.9951690821256038,
+    "true_positive": 1030,
+    "false_positive": 3,
+    "false_negative": 7,
+    "correct_null_rate": 1.0,
+    "hallucination_rate": 0.0,
+    "n_rows": 1150
+  },
+  "line_item_f1": 0.9565217391304348,
+  "baseline_metrics": {
+    "precision": 0.9970958373668926,
+    "recall": 0.9932497589199615,
+    "f1": 0.9951690821256038,
+    "true_positive": 1030,
+    "false_positive": 3,
+    "false_negative": 7,
+    "correct_null_rate": 1.0,
+    "hallucination_rate": 0.0,
+    "n_rows": 1150
+  },
+  "ece": 0.16043165537270082,
+  "reliability_bins": [
+    {
+      "bin": 1,
+      "count": 133,
+      "confidence": 0.1595,
+      "accuracy": 0.9774436090225563
+    },
+    {
+      "bin": 9,
+      "count": 900,
+      "confidence": 0.9367340000000001,
+      "accuracy": 1.0
+    }
+  ],
+  "field_accept_curve": [
+    {
+      "threshold": 0,
+      "coverage": 1.0,
+      "error_rate": 0.002904162633107454
+    },
+    {
+      "threshold": 0.2,
+      "coverage": 0.8712487899322362,
+      "error_rate": 0.0
+    },
+    {
+      "threshold": 0.4,
+      "coverage": 0.8712487899322362,
+      "error_rate": 0.0
+    },
+    {
+      "threshold": 0.6,
+      "coverage": 0.8712487899322362,
+      "error_rate": 0.0
+    },
+    {
+      "threshold": 0.8,
+      "coverage": 0.8712487899322362,
+      "error_rate": 0.0
+    },
+    {
+      "threshold": 0.9,
+      "coverage": 0.8712487899322362,
+      "error_rate": 0.0
+    },
+    {
+      "threshold": 0.95,
+      "coverage": 0.0,
+      "error_rate": null
+    },
+    {
+      "threshold": 1.0,
+      "coverage": 0.0,
+      "error_rate": null
+    }
+  ],
+  "by_tag": {
+    "negative_credit": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "true_positive": 92,
+      "false_positive": 0,
+      "false_negative": 0,
+      "correct_null_rate": 1.0,
+      "hallucination_rate": 0.0,
+      "n_rows": 100
+    },
+    "tbd": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "true_positive": 60,
+      "false_positive": 0,
+      "false_negative": 0,
+      "correct_null_rate": 1.0,
+      "hallucination_rate": 0.0,
+      "n_rows": 75
+    },
+    "ambiguous_date": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "true_positive": 66,
+      "false_positive": 0,
+      "false_negative": 0,
+      "correct_null_rate": 1.0,
+      "hallucination_rate": 0.0,
+      "n_rows": 75
+    },
+    "european_numbers": {
+      "precision": 0.9891304347826086,
+      "recall": 0.9891304347826086,
+      "f1": 0.9891304347826086,
+      "true_positive": 91,
+      "false_positive": 1,
+      "false_negative": 1,
+      "correct_null_rate": 1.0,
+      "hallucination_rate": 0.0,
+      "n_rows": 100
+    },
+    "non_summing": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "true_positive": 92,
+      "false_positive": 0,
+      "false_negative": 0,
+      "correct_null_rate": 1.0,
+      "hallucination_rate": 0.0,
+      "n_rows": 100
+    },
+    "superseded_revision": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "true_positive": 92,
+      "false_positive": 0,
+      "false_negative": 0,
+      "correct_null_rate": 1.0,
+      "hallucination_rate": 0.0,
+      "n_rows": 100
+    },
+    "missing_fields": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "true_positive": 60,
+      "false_positive": 0,
+      "false_negative": 0,
+      "correct_null_rate": 1.0,
+      "hallucination_rate": 0.0,
+      "n_rows": 75
+    },
+    "ocr_typos": {
+      "precision": 1.0,
+      "recall": 0.9565217391304348,
+      "f1": 0.9777777777777777,
+      "true_positive": 66,
+      "false_positive": 0,
+      "false_negative": 3,
+      "correct_null_rate": 1.0,
+      "hallucination_rate": 0.0,
+      "n_rows": 75
+    },
+    "distractor_numbers": {
+      "precision": 0.9855072463768116,
+      "recall": 0.9855072463768116,
+      "f1": 0.9855072463768116,
+      "true_positive": 68,
+      "false_positive": 1,
+      "false_negative": 1,
+      "correct_null_rate": 1.0,
+      "hallucination_rate": 0.0,
+      "n_rows": 75
+    },
+    "prompt_injection": {
+      "precision": 1.0,
+      "recall": 0.9855072463768116,
+      "f1": 0.9927007299270074,
+      "true_positive": 68,
+      "false_positive": 0,
+      "false_negative": 1,
+      "correct_null_rate": 1.0,
+      "hallucination_rate": 0.0,
+      "n_rows": 75
+    },
+    "pii": {
+      "precision": 0.9891304347826086,
+      "recall": 0.9891304347826086,
+      "f1": 0.9891304347826086,
+      "true_positive": 91,
+      "false_positive": 1,
+      "false_negative": 1,
+      "correct_null_rate": 1.0,
+      "hallucination_rate": 0.0,
+      "n_rows": 100
+    },
+    "negative_parentheses": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "true_positive": 92,
+      "false_positive": 0,
+      "false_negative": 0,
+      "correct_null_rate": 1.0,
+      "hallucination_rate": 0.0,
+      "n_rows": 100
+    },
+    "negative_minus": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "true_positive": 92,
+      "false_positive": 0,
+      "false_negative": 0,
+      "correct_null_rate": 1.0,
+      "hallucination_rate": 0.0,
+      "n_rows": 100
+    }
+  },
+  "by_source": {
+    "multi_page_pdf": {
+      "precision": 1.0,
+      "recall": 0.9925373134328358,
+      "f1": 0.9962546816479401,
+      "true_positive": 133,
+      "false_positive": 0,
+      "false_negative": 1,
+      "correct_null_rate": 1.0,
+      "hallucination_rate": 0.0,
+      "n_rows": 150
+    },
+    "scanned_pdf": {
+      "precision": 0.9774436090225563,
+      "recall": 0.9701492537313433,
+      "f1": 0.9737827715355805,
+      "true_positive": 130,
+      "false_positive": 3,
+      "false_negative": 4,
+      "correct_null_rate": 1.0,
+      "hallucination_rate": 0.0,
+      "n_rows": 150
+    },
+    "pasted_txt": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "true_positive": 137,
+      "false_positive": 0,
+      "false_negative": 0,
+      "correct_null_rate": 1.0,
+      "hallucination_rate": 0.0,
+      "n_rows": 150
+    },
+    "two_orders_pdf": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "true_positive": 276,
+      "false_positive": 0,
+      "false_negative": 0,
+      "correct_null_rate": 1.0,
+      "hallucination_rate": 0.0,
+      "n_rows": 300
+    },
+    "typed_pdf": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "true_positive": 135,
+      "false_positive": 0,
+      "false_negative": 0,
+      "correct_null_rate": 1.0,
+      "hallucination_rate": 0.0,
+      "n_rows": 150
+    },
+    "aia_style_pdf": {
+      "precision": 1.0,
+      "recall": 0.9910714285714286,
+      "f1": 0.9955156950672646,
+      "true_positive": 111,
+      "false_positive": 0,
+      "false_negative": 1,
+      "correct_null_rate": 1.0,
+      "hallucination_rate": 0.0,
+      "n_rows": 125
+    },
+    "email_text": {
+      "precision": 1.0,
+      "recall": 0.9908256880733946,
+      "f1": 0.9953917050691244,
+      "true_positive": 108,
+      "false_positive": 0,
+      "false_negative": 1,
+      "correct_null_rate": 1.0,
+      "hallucination_rate": 0.0,
+      "n_rows": 125
+    }
+  },
+  "p50_latency_ms": 24.0,
+  "p95_latency_ms": 777,
+  "total_cost_estimate": 0.0,
+  "reviewed": 40,
+  "calibration": {
+    "model_id": "mock-regex-v1",
+    "calibrated": true,
+    "feature_names": [
+      "grounding",
+      "validation",
+      "agreement",
+      "source_quality",
+      "model_reported"
+    ],
+    "weights": [
+      -0.0007220606062857148,
+      -0.08949362957971221,
+      -0.0003610303031428574,
+      7.918983635220455,
+      -0.0004332363637531754
+    ],
+    "intercept": -5.134598642503269,
+    "review_threshold": 1.01,
+    "dev_size": 519,
+    "target_dev_precision": 0.95,
+    "dev_document_autoaccepted": 0
+  }
+}

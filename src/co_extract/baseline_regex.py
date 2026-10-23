@@ -26,6 +26,10 @@ NUMS = {'subtotal', 'markup', 'tax', 'total_amount', 'original_contract_sum', 'r
 def baseline(pages) -> LLMOutput:
     """Parse explicit field labels without Gemini; this is NOT a learned AI system."""
     chunks = []
+    source_pages = list(pages)
+
+    def locate(quote: str, fallback: int) -> int:
+        return next((p.num for p in source_pages if quote in p.text), fallback)
     for page in pages:
         segments = re.split(r'(?=^Change Order Number\s*:)', page.text, flags=re.M)
         for seg in segments:
@@ -54,7 +58,7 @@ def baseline(pages) -> LLMOutput:
                     value = None
             if value is None:
                 continue
-            data[name] = {'value': value, 'evidence': match.group(0).strip(), 'page': pnum,
+            data[name] = {'value': value, 'evidence': match.group(0).strip(), 'page': locate(match.group(0).strip(), pnum),
                           'model_confidence': 0.60}
         line_items = []
         for line in re.findall(r'^Item:\s*(.+)$', chunk, flags=re.M):
@@ -66,7 +70,7 @@ def baseline(pages) -> LLMOutput:
                 value = parse_number(text) if labels[index] in {'quantity','unit_cost','amount'} else text
                 if value is None:
                     continue
-                item[labels[index]] = {'value': value, 'evidence': 'Item: '+line, 'page': pnum,
+                item[labels[index]] = {'value': value, 'evidence': 'Item: '+line, 'page': locate('Item: '+line, pnum),
                                        'model_confidence': 0.60}
             if item:
                 line_items.append(item)

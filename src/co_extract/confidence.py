@@ -62,12 +62,12 @@ def score_orders(orders: list[ChangeOrder], document: Document, *, params: dict 
             if field.value is None:
                 continue
             grounded = ground_score(field, document)
-            if grounded < .94:
+            if grounding_enabled and grounded < .94:
                 if 'not_grounded' not in field.flags:
                     field.flags.append('not_grounded')
             fs = features(field, document, (agreement or {}).get(f'{idx}:{name}'),
                           grounding_enabled=grounding_enabled)
-            field.confidence = round(min(predict(fs, params), .20 if grounded < .94 else 1.0), 4)
+            field.confidence = round(min(predict(fs, params), .20 if grounding_enabled and grounded < .94 else 1.0), 4)
         critical_scores.extend(getattr(order, key).confidence for key in CRITICAL)
     return round(min(critical_scores, default=0.0), 4)
 
