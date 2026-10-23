@@ -1,0 +1,28 @@
+{
+  "orders": [
+    {
+      "project_name": "North Valley Water Plant",
+      "project_number": "NVW-44",
+      "change_order_number": "CO-071",
+      "date_issued": "2026-09-05",
+      "owner": "Water Reclamation District",
+      "contractor": "Cascade Industrial",
+      "title": "Additional Butterfly Valve",
+      "reason": "code_requirement",
+      "change_type": "additive",
+      "status": "pending",
+      "subtotal": 4500.0,
+      "total_amount": 4500.0,
+      "currency": "USD",
+      "line_items": [
+        {
+          "description": "12-inch Resilient Seat Valve",
+          "quantity": 2.0,
+          "unit": "EA",
+          "unit_cost": 1500.0,
+          "amount": 4500.0
+        }
+      ]
+    }
+  ]
+}

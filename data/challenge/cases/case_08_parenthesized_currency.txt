@@ -1,0 +1,23 @@
+AIA DOCUMENT G701 - CHANGE ORDER
+Project: Downtown Parking Structure
+Project Number: PK-109
+Change Order Number: CO-014
+Contract Number: CT-7711
+Date Issued: 2026-07-20
+Owner: Downtown Development Authority
+Contractor: Vertex Structural LLC
+Title: Value Engineering on Post-Tensioned Cable Spacing
+Reason: value_engineering
+Change Type: deductive
+Status: approved
+
+Net change by this Change Order: ($12,350.00)
+Subtotal: ($12,350.00)
+Markup: $0.00
+Tax: $0.00
+Total Amount: ($12,350.00)
+Currency: USD
+
+Original Contract Sum: $5,100,000.00
+Revised Contract Sum: $5,087,650.00
+Schedule Impact Days: -3

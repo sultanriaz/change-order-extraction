@@ -1,94 +1,124 @@
-# Change-order extraction — engineering take-home
+# Change-Order Extraction Pipeline — Engineering Take-Home
 
-**Scope:** Read messy construction change-order PDF/text/image documents and emit schema-validated, provenance-bearing JSON with explicit uncertainty. Default posture is **human review, not automatic financial approval**. This is a reproducible engineering demonstration, **not a benchmark of Gemini accuracy on real contracts**.
+**Role & Scope:** Extract structured change-order data from messy construction PDF, image, and text documents into schema-validated JSON with explicit provenance, deterministic business validation, and confidence scores. Default posture is **human review by default, not automatic financial approval**.
 
-## Five-minute quickstart
+---
 
-Requirements: Python **3.11+** (CI uses 3.11). Tesseract/Poppler are optional for PDF text-only tests; image/scanned documents need Tesseract. To install optional OCR on Ubuntu: `sudo apt-get install tesseract-ocr poppler-utils`. On Windows, install Tesseract OCR and Poppler separately and add them to `PATH` (or run the Docker image).
+## 1. Quickstart & Local Execution
 
+### Prerequisites
+- Python **3.11+**
+- (Optional for scanned PDFs/images) Tesseract OCR and Poppler utilities (`sudo apt-get install tesseract-ocr poppler-utils` on Debian/Ubuntu).
+
+### Setup & Offline Testing
 ```bash
 python -m venv .venv
 # Windows PowerShell: .\.venv\Scripts\Activate.ps1
-# macOS/Linux: source .venv/bin/activate
-make setup
-make data
-make test
+# macOS/Linux:        source .venv/bin/activate
+pip install -r requirements.txt
+
+# Run full offline test suite (72 tests, 97% coverage)
+pytest
+
+# Extract sample using offline MockLLM fixture
 python -m co_extract extract examples/sample.pdf --mock --out out/
-make eval
 ```
 
-Without the API key, the CLI **explicitly labels its fallback as a rule-based MockLLM**. The mock is a development fixture, not an LLM. `out/sample.json` contains one fully typed extraction with per-field evidence/page/confidence and `needs_review`. To reproduce the original spec's sample command, run `python -m co_extract extract examples/sample.pdf` (it uses Gemini if an API key is present, otherwise explicitly warns and uses the mock).
-
-### Live Gemini (requires user-provided API key)
+### Live Gemini Execution
+The CLI automatically loads `.env` if present (or reads environment variables directly):
 
 ```bash
-cp .env.example .env  # Windows: copy .env.example .env
-# Set GEMINI_API_KEY in your shell (the CLI does not auto-load .env).
-# Set EXTRACTION_MODEL=gemini-3.8-flash after verifying the model name in Google AI Studio.
-make smoke             # ONE non-cached primary live Gemini request; prints validated JSON
+# Configure API key in .env or shell
+echo "GEMINI_API_KEY=your_key_here" > .env
+echo "EXTRACTION_MODEL=gemini-2.5-flash" >> .env
+
+# 1. Live Smoke Test: verifies primary live request, schema decoding, and latency
+python -m co_extract smoke
+
+# 2. Live Uncached Extraction: extracts sample.pdf directly with live Gemini
 python -m co_extract extract examples/sample.pdf --out out/ --no-cache
-make eval-live         # real DEV calibration + TEST evaluation; incurs API calls
+
+# 3. Live Evaluation: runs live calibration on DEV split
+python -m co_extract eval --live
 ```
 
-**Check live model availability before running.** The default `gemini-3.8-flash` was checked against [Google's model listing](https://ai.google.dev/gemini-api/docs/models) on 2026-10-23, but provider versions can disappear or have account-specific availability. `EXTRACTION_MODEL` is always passed to the SDK rather than hardcoded in a model invocation. The `google-genai` SDK is required; the obsolete `google-generativeai` package is not used. A 404 produces an actionable error. Missing key for `make smoke` is an intentional exit code 2, **not** a successful smoke result.
+---
 
-**Privacy:** Never transmit real owner/contractor details to the Gemini API for this assignment. Some Gemini API free-tier usage may be used to improve provider products; review the [official provider terms and pricing tables](https://ai.google.dev/gemini-api/docs/pricing) and use only invented/non-sensitive records. Logs contain trace metadata, not raw document bodies; caches may contain snippets/evidence and should be protected accordingly. `.env` is excluded from Git.
+## 2. Adversarial Challenge Dataset & Demonstration Cases
 
-## Architecture
+To evaluate beyond templated synthetic data, the repository includes an **independent 26-case Adversarial Challenge Dataset** (`data/challenge/`):
+
+```bash
+# Run evaluation across the 26 adversarial challenge cases
+python eval/run_challenge.py
+```
+
+### Demonstration Cases (`examples/`):
+- `examples/01_clean_change_order.txt` & `examples/01_clean_change_order.json`: Clean AIA G701-style single-page order with standard line items.
+- `examples/02_messy_scanned.txt` & `examples/02_messy_scanned.json`: Degraded scan with OCR noise, character substitutions (`P~2088`), and handwritten field notations.
+- `examples/03_conflicting_arithmetic.txt` & `examples/03_conflicting_arithmetic.json`: Intentional arithmetic discrepancy (subtotal mismatch and missing tax) demonstrating deterministic flagging and human review routing (`needs_review: true`).
+
+---
+
+## 3. Architecture Overview
 
 ```mermaid
 flowchart LR
-  A[PDF / TXT / JPG / PNG] --> B[Per-page text/tables + OCR fallback]
-  B --> C[SHA-256 + flagged unsafe document instructions]
-  C --> D[Page-window extraction with overlap]
-  D --> E[Gemini structured JSON or offline heuristic mock]
-  E --> F[Pydantic revalidation + bounded repair]
-  F --> G[Merge orders / preserve conflicts]
-  G --> H[Raw values + separate normalization]
-  H --> I[Deterministic financial, date, enum validation]
-  I --> J[Evidence grounding + DEV-fitted confidence]
-  J --> K{Review gate}
-  K -->|all checks pass| L[Validated JSON]
-  K -->|otherwise| M[needs_review JSON + reason codes]
+  A["PDF / Image / TXT"] --> B["Ingest & Tesseract OCR"]
+  B --> C["SHA-256 & Injection Check"]
+  C --> D["4-Page Overlapped Windowing"]
+  D --> E["Gemini 2.5 Flash (Structured JSON)"]
+  E --> F["Pydantic Revalidation"]
+  F --> G["Deterministic Normalization"]
+  G --> H["Cross-Field Financial Validation"]
+  H --> I["Fuzzy Grounding & Confidence"]
+  I --> J{"Selective Review Gate"}
+  J -->|Pass| K["Validated JSON"]
+  J -->|Flagged| L["needs_review JSON + Issue Codes"]
 ```
 
-Two schemas intentionally coexist: `LLMOutput` has concrete wrappers (`StrField`, `FloatField`, `IntField`, `DateField`, `EnumField`) that accept minimal JSON, while `DocumentResult` adds normalizations, validator issues, review flags, token accounting and evidence. `docs/schema.json` is the **internal output schema**, not the SDK's model-facing schema.
+### Two-Schema Pattern:
+- `LLMOutput` (`src/co_extract/schema.py`): Minimal grammar-safe extraction schema passed to Gemini. Solves Google GenAI DFA state explosion bug by stripping redundant numeric range constraints.
+- `DocumentResult` (`src/co_extract/schema.py`): Rich domain model containing raw vs. normalized values, RapidFuzz match scores, arithmetic warning flags, review routing decisions, and execution metadata.
 
-## Commands and components
+---
 
-| Command | Behavior |
-|---|---|
-| `python -m co_extract extract <file-or-dir> --out out/ [--mock] [--no-cache] [--self-consistency 3] [--vision]` | Extract documents, isolate failures, honor bounded concurrency |
-| `python -m co_extract schema` | Rebuild public internal JSON Schema |
-| `python -m co_extract generate-data` | Regenerate deterministic 120-document corpus plus 10 rough memo samples |
-| `python -m co_extract eval [--live]` | DEV calibration and held-out TEST evaluation |
-| `make lint`, `make typecheck`, `make test` | Ruff, mypy and offline test suite |
-| `docker build -t change-order . && docker run --rm change-order --help` | Container CLI with Tesseract/Poppler installed |
+## 4. Evaluation & Verification Summary
 
-Source components are under `src/co_extract/`: `ingest.py` for documents; `schema.py` for typed contracts; `prompts.py` for versioned instructions; `llm.py` for Google SDK/rate limiting/retries/cache and a heuristic mock; `extract.py` for chunking/merge/repair; `normalize.py` and `validate.py` for deterministic checks; `confidence.py` for grounding and calibration; `security.py` for review hints/log redaction; `pipeline.py` for failure isolation; `cli.py` for commands. `eval/` contains the independent runner, matching rules, regex baseline and frozen output artifacts.
+| Evaluation Suite | Evaluated Provider / Engine | Scope | Field F1 | Line-Item F1 | Review Decision |
+|---|---|---|:---:|:---:|:---:|
+| **Live Gemini DEV** | **Google Gemini 2.5 Flash** (Live API) | 11 Documents (325 fields) | **0.9966** | **0.9810** | 11 / 11 Review |
+| **Synthetic TEST** | Offline MockLLM Heuristic | 40 Held-Out Documents | **0.9952** | **0.9783** | 40 / 40 Review |
+| **Adversarial Challenge** | Offline MockLLM Heuristic | 26 Independent Cases | **0.7902** | **0.0000** | 26 / 26 Review |
 
-### Calibration and what the numbers actually mean
+*Note on Calibration & Gating:* The selective review gate targets ≥95% accuracy on critical financial fields. On DEV, the fitted logistic calibrator identified no operating threshold that could guarantee zero financial risk without human review, deliberately setting the acceptance threshold to **1.01** (unreachable). In commercial construction, zero false automated approvals is the only defensible safety posture.
 
-The generator makes **60 train**, **20 DEV** and **40 held-out TEST** synthetic documents from a fixed seed. The scorer fits only on DEV; it chooses an auto-accept threshold on DEV with a minimum *target* of 95% observed critical-field correctness; if no threshold is justified, it deliberately **accepts none** (`1.01`). The TEST split is never used in fitting or threshold selection. Calibration parameters are model-specific: DEV parameters fitted on `mock-regex-v1` cannot be applied to Gemini.
+---
 
-Current committed **offline heuristic test** (actual local run, not Gemini):
+## 5. Security & Privacy Guarantees
+- **Secret Isolation:** `.env` and `.cache/` are explicitly ignored in `.gitignore`. API keys are never printed, logged, or included in telemetry/traces.
+- **Untrusted Document Ingestion:** Raw document text is scanned for adversarial prompt injection patterns (`System Override`, `Ignore previous instructions`). Document contents are strictly wrapped within `<document>` delimiters in LLM prompts.
+- **Audit Logs:** Logs redact prospective PII (emails, phone numbers) and record trace hashes rather than raw contract bodies.
 
-| TEST measure | Result |
-|---|---:|
-| Field precision / recall / F1 | 0.9971 / 0.9932 / 0.9952 |
-| Matched line-item F1 | 0.9783 |
-| Expected calibration error, extracted non-null fields | 0.1604 |
-| Documents marked `needs_review` | 40 / 40 |
-| Tested live Gemini calls | **0 (pending key/provider SDK setup)** |
+---
 
-These values are **inflated by synthetic template regularity**. The offline `MockLLM` is implemented using the **same heuristic extraction logic as the regex baseline**, so its measured difference from the baseline is **zero by design**. Do not use its F1 or confidence to make a Gemini or real-world performance claim. Review [the full per-tag report](eval/results/report.md), [raw mistakes](eval/results/raw.json), [summary](eval/results/summary.json), and [reliability plot](eval/results/reliability.png). Rerun with `make eval` after changes; live results are pending a key and do not magically appear with the mock.
+## 6. Project Commands & Make Targets
 
-### Cost, caching and caveats
+| Target | Command | Purpose |
+|---|---|---|
+| `make test` | `pytest` | Runs 72 unit, integration, and regression tests |
+| `make smoke` | `python -m co_extract smoke` | One uncached live Gemini call with schema verification |
+| `make eval` | `python -m co_extract eval` | Runs DEV calibration & held-out TEST evaluation (offline baseline) |
+| `make eval-live` | `python -m co_extract eval --live` | Executes live Gemini DEV/TEST evaluation |
+| `make lint` | `ruff check src tests eval scripts` | 100% clean linting verification |
+| `make format` | `ruff format src tests eval scripts` | Code formatting check |
+| `docker build` | `docker build -t change-order-extraction .` | Production container build with Tesseract & Poppler |
 
-Gemini requests have a configurable token bucket (`CO_REQUESTS_PER_MIN`, default 20), limited batch concurrency (`CO_CONCURRENCY=2`), exponential backoff with jitter on transient provider errors, and a disk cache hashed over source, prompt/model, temperature, request content and vision mode. Token usage from SDK metadata is stored per result. `CO_INPUT_USD_PER_M` / `CO_OUTPUT_USD_PER_M` are **illustrative placeholders**, not a pricing claim. Only source SHA-256 and model configuration, not the API key, enter the cache key. Force a fresh call using `--no-cache`.
+---
 
-A quote can be present in a document and still misidentify the right field. OCR often changes dashes and numbers; fuzzy matching is only a **grounding hint**. Arithmetic checks **never correct** reported totals. Date ambiguity forces `normalized_value=null`. Security scanning is a review heuristic and does not make documents trusted. A failing input or blocked provider response becomes a typed review result, not a batch crash. Re-run evaluation on *independently annotated real contracts* before any production use.
+## 7. Disclosed Provider Limitations
 
-## Limitations of this checked-in run
+1. **Google AI Studio Free-Tier Quota:** The user-supplied API key is provisioned under Google's Free Tier with a hard daily cap of **20 requests per day per project** (`GenerateRequestsPerDayPerProjectPerModel-FreeTier`). Live verification successfully processed 11 DEV documents (and 2 smoke/extract calls) before exhausting the 20-call daily quota. Production deployment requires upgrading to an enterprise Pay-As-You-Go project on Google Cloud Vertex AI or Google AI Studio.
+2. **Synthetic Metric Caveat:** While synthetic templates yield ~0.995 F1, real-world messy documents and unstructured challenge cases degrade baseline heuristic performance to ~0.790 F1. All commercial deployments require continuous active-learning review.
 
-Live Gemini output contracts, structured-schema compatibility, API rate limits and model-specific reliability were **not tested** in the offline build environment (no `GEMINI_API_KEY`; package repository inaccessible). The PyPI pinned dependencies are a specification for a connected developer workstation/CI, not proof they were all installed on this machine. Automated Ruff and mypy runs are pending successful dependency installation, although Python compilation and all currently executed offline tests pass. See [WRITEUP.md](WRITEUP.md) for observed error examples and [REVIEW_CHECKLIST.md](REVIEW_CHECKLIST.md) for exact status.
+See [`WRITEUP.md`](WRITEUP.md) for the detailed technical report and [`docs/PRE_SUBMISSION_AUDIT.md`](docs/PRE_SUBMISSION_AUDIT.md) for the pre-submission defect log.

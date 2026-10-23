@@ -1,0 +1,15 @@
+CHANGE ORDER DISPOSITION
+Project Name: Central Library Renovation
+Project Number: CLR-02
+Change Order Number: CO-049
+Contract Number: CT-309
+Date Issued: 2026-04-20
+Owner: Public Library System
+Contractor: Alpha Construction
+Title: Custom Millwork Bookcases
+Total Amount: $22,000.00
+Currency: USD
+Status: rejected
+Reason: owner_request
+Change Type: additive
+Note: DISPOSITION: REJECTED BY OWNER due to budget limitations.

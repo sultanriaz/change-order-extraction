@@ -1,0 +1,250 @@
+{
+  "orders": [
+    {
+      "project_name": {
+        "value": null,
+        "normalized_value": null,
+        "confidence": 0.0,
+        "evidence": null,
+        "page": null,
+        "flags": [],
+        "model_confidence": null
+      },
+      "project_number": {
+        "value": null,
+        "normalized_value": null,
+        "confidence": 0.0,
+        "evidence": null,
+        "page": null,
+        "flags": [],
+        "model_confidence": null
+      },
+      "change_order_number": {
+        "value": null,
+        "normalized_value": null,
+        "confidence": 0.0,
+        "evidence": null,
+        "page": null,
+        "flags": [],
+        "model_confidence": null
+      },
+      "contract_number": {
+        "value": null,
+        "normalized_value": null,
+        "confidence": 0.0,
+        "evidence": null,
+        "page": null,
+        "flags": [],
+        "model_confidence": null
+      },
+      "revision_number": {
+        "value": null,
+        "normalized_value": null,
+        "confidence": 0.0,
+        "evidence": null,
+        "page": null,
+        "flags": [],
+        "model_confidence": null
+      },
+      "date_issued": {
+        "value": null,
+        "normalized_value": null,
+        "confidence": 0.0,
+        "evidence": null,
+        "page": null,
+        "flags": [],
+        "model_confidence": null
+      },
+      "owner": {
+        "value": null,
+        "normalized_value": null,
+        "confidence": 0.0,
+        "evidence": null,
+        "page": null,
+        "flags": [],
+        "model_confidence": null
+      },
+      "contractor": {
+        "value": null,
+        "normalized_value": null,
+        "confidence": 0.0,
+        "evidence": null,
+        "page": null,
+        "flags": [],
+        "model_confidence": null
+      },
+      "architect_or_engineer": {
+        "value": null,
+        "normalized_value": null,
+        "confidence": 0.0,
+        "evidence": null,
+        "page": null,
+        "flags": [],
+        "model_confidence": null
+      },
+      "requested_by": {
+        "value": null,
+        "normalized_value": null,
+        "confidence": 0.0,
+        "evidence": null,
+        "page": null,
+        "flags": [],
+        "model_confidence": null
+      },
+      "title": {
+        "value": "Inverter Pad Concrete Thickening",
+        "normalized_value": "Inverter Pad Concrete Thickening",
+        "confidence": 0.9367,
+        "evidence": "Title: Inverter Pad Concrete Thickening",
+        "page": 1,
+        "flags": [],
+        "model_confidence": null
+      },
+      "description": {
+        "value": null,
+        "normalized_value": null,
+        "confidence": 0.0,
+        "evidence": null,
+        "page": null,
+        "flags": [],
+        "model_confidence": null
+      },
+      "reason": {
+        "value": "unforeseen_condition",
+        "normalized_value": "unforeseen_condition",
+        "confidence": 0.9367,
+        "evidence": "Reason: unforeseen_condition",
+        "page": 1,
+        "flags": [],
+        "model_confidence": null
+      },
+      "change_type": {
+        "value": "additive",
+        "normalized_value": "additive",
+        "confidence": 0.9367,
+        "evidence": "Change Type: additive",
+        "page": 1,
+        "flags": [],
+        "model_confidence": null
+      },
+      "line_items": [],
+      "subtotal": {
+        "value": null,
+        "normalized_value": null,
+        "confidence": 0.0,
+        "evidence": null,
+        "page": null,
+        "flags": [],
+        "model_confidence": null
+      },
+      "markup": {
+        "value": null,
+        "normalized_value": null,
+        "confidence": 0.0,
+        "evidence": null,
+        "page": null,
+        "flags": [],
+        "model_confidence": null
+      },
+      "tax": {
+        "value": null,
+        "normalized_value": null,
+        "confidence": 0.0,
+        "evidence": null,
+        "page": null,
+        "flags": [],
+        "model_confidence": null
+      },
+      "total_amount": {
+        "value": null,
+        "normalized_value": null,
+        "confidence": 0.0,
+        "evidence": null,
+        "page": null,
+        "flags": [],
+        "model_confidence": null
+      },
+      "currency": {
+        "value": "USD",
+        "normalized_value": "USD",
+        "confidence": 0.9367,
+        "evidence": "Currency: USD",
+        "page": 1,
+        "flags": [],
+        "model_confidence": null
+      },
+      "original_contract_sum": {
+        "value": null,
+        "normalized_value": null,
+        "confidence": 0.0,
+        "evidence": null,
+        "page": null,
+        "flags": [],
+        "model_confidence": null
+      },
+      "revised_contract_sum": {
+        "value": null,
+        "normalized_value": null,
+        "confidence": 0.0,
+        "evidence": null,
+        "page": null,
+        "flags": [],
+        "model_confidence": null
+      },
+      "schedule_impact_days": {
+        "value": null,
+        "normalized_value": null,
+        "confidence": 0.0,
+        "evidence": null,
+        "page": null,
+        "flags": [],
+        "model_confidence": null
+      },
+      "original_completion_date": {
+        "value": null,
+        "normalized_value": null,
+        "confidence": 0.0,
+        "evidence": null,
+        "page": null,
+        "flags": [],
+        "model_confidence": null
+      },
+      "new_completion_date": {
+        "value": null,
+        "normalized_value": null,
+        "confidence": 0.0,
+        "evidence": null,
+        "page": null,
+        "flags": [],
+        "model_confidence": null
+      },
+      "status": {
+        "value": "approved",
+        "normalized_value": "approved",
+        "confidence": 0.9367,
+        "evidence": "Status: approved",
+        "page": 1,
+        "flags": [],
+        "model_confidence": null
+      },
+      "signatures": []
+    }
+  ],
+  "document_confidence": 0.0,
+  "needs_review": true,
+  "validation_report": [],
+  "warnings": [],
+  "metadata": {
+    "model": "mock-regex-v1",
+    "prompt_version": "co-extract-2026-10-v1",
+    "latency_ms": 7,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_estimate": 0.0,
+    "source_hash": "73d3f87186e8088befe2b80f85961fa34164ba34b430e8ff2e621bec62a3c29e",
+    "pipeline_version": "0.1.0",
+    "trace_id": "f0d684eb3300419e",
+    "cache_hit": false,
+    "confidence_mode": "dev_fitted"
+  }
+}

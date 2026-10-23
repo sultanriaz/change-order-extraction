@@ -1,0 +1,14 @@
+CHANGE ORDER REVISION FORM
+Project Name: Harbor Marina Docks
+Project Number: HMD-101
+Change Order Number: CO-008
+Revision Number: Rev B
+Date Issued: 2026-06-18
+Owner: Marina Port Authority
+Contractor: Coastal Marine Contractors LLC
+Title: Gangway Reinforcement and Lighting
+Note: This Revision B supersedes previous Revision A dated 2026-05-10.
+Total Amount: $18,400.00
+Currency: USD
+Status: approved
+Schedule Impact Days: 3

@@ -1,0 +1,23 @@
+{
+  "orders": [
+    {
+      "project_name": "Downtown Parking Structure",
+      "project_number": "PK-109",
+      "change_order_number": "CO-014",
+      "contract_number": "CT-7711",
+      "date_issued": "2026-07-20",
+      "owner": "Downtown Development Authority",
+      "contractor": "Vertex Structural LLC",
+      "title": "Value Engineering on Post-Tensioned Cable Spacing",
+      "reason": "value_engineering",
+      "change_type": "deductive",
+      "status": "approved",
+      "subtotal": -12350.0,
+      "total_amount": -12350.0,
+      "currency": "USD",
+      "original_contract_sum": 5100000.0,
+      "revised_contract_sum": 5087650.0,
+      "schedule_impact_days": -3
+    }
+  ]
+}

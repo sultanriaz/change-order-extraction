@@ -1,0 +1,21 @@
+{
+  "orders": [
+    {
+      "project_name": "Brussels Logistics Hub",
+      "project_number": "BEL-2026-11",
+      "change_order_number": "CO-EU-03",
+      "contract_number": "EUR-9901",
+      "date_issued": "2026-09-12",
+      "owner": "EuroTrans Logistics NV",
+      "contractor": "B\u00e2timent & G\u00e9nie Civil SA",
+      "title": "Entrep\u00f4t Quai de D\u00e9chargement R\u00e9novation",
+      "reason": "owner_request",
+      "change_type": "additive",
+      "status": "approved",
+      "subtotal": 5400.5,
+      "total_amount": 5400.5,
+      "currency": "EUR",
+      "schedule_impact_days": 0
+    }
+  ]
+}

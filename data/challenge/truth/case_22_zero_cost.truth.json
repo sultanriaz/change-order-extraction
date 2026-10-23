@@ -1,0 +1,24 @@
+{
+  "orders": [
+    {
+      "project_name": "County Courthouse Expansion",
+      "project_number": "CCH-201",
+      "change_order_number": "CO-011NC",
+      "contract_number": "CT-8822",
+      "date_issued": "2026-05-30",
+      "owner": "County Board of Commissioners",
+      "contractor": "Gilbane Building Company",
+      "title": "Substitute Spec on Interior Paint Primer",
+      "description": "Owner approves Sherwin Williams primer substitute in lieu of Benjamin Moore at zero cost difference.",
+      "reason": "value_engineering",
+      "change_type": "no_cost",
+      "status": "approved",
+      "subtotal": 0.0,
+      "markup": 0.0,
+      "tax": 0.0,
+      "total_amount": 0.0,
+      "currency": "USD",
+      "schedule_impact_days": 0
+    }
+  ]
+}

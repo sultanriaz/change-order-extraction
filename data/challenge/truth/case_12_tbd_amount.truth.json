@@ -1,0 +1,19 @@
+{
+  "orders": [
+    {
+      "project_name": "City Hall Annex Seismic Retrofit",
+      "project_number": "CH-901",
+      "change_order_number": "ECD-002",
+      "contract_number": "CT-5501",
+      "date_issued": "2026-07-04",
+      "owner": "City Municipal Services",
+      "contractor": "SafeBase Engineering",
+      "title": "Uncharted Foundation Wall Underpinning",
+      "description": "Work to proceed immediately on Time and Materials basis.",
+      "total_amount": null,
+      "currency": "USD",
+      "status": "pending",
+      "schedule_impact_days": 10
+    }
+  ]
+}

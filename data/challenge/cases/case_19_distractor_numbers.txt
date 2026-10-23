@@ -1,0 +1,17 @@
+CHANGE ORDER CONFIRMATION
+Page 1 of 15
+Vendor Invoice Reference: INV-9876543
+Contact Dispatch Phone: (555) 867-5309
+Contractor License: #1049281
+Zip Code: 97201
+Project Name: South Waterfront Tower
+Project Number: SWT-10
+Change Order Number: CO-067
+Contract Number: CT-4402
+Date Issued: 2026-07-15
+Owner: Waterfront Holdings LLC
+Contractor: Skanska USA Building
+Title: Elevator Shaft Drywall Fire Rating
+Total Amount: $9,800.00
+Currency: USD
+Status: approved

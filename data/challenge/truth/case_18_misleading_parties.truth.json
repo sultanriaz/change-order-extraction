@@ -1,0 +1,17 @@
+{
+  "orders": [
+    {
+      "project_name": "Life Sciences Research Building",
+      "project_number": "LSU-2026",
+      "change_order_number": "COP-018",
+      "date_issued": "2026-06-25",
+      "owner": "State University Trustees",
+      "contractor": "Modern Continental Builders",
+      "architect_or_engineer": "Perkins & Will Architects",
+      "title": "Additional HEPA Filtration Units in Cleanroom B",
+      "total_amount": 28900.0,
+      "currency": "USD",
+      "status": "pending"
+    }
+  ]
+}

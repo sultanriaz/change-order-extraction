@@ -1,0 +1,22 @@
+AVENANT AU CONTRAT DE TRAVAUX (CHANGE ORDER)
+Project Name: Brussels Logistics Hub
+Project Number: BEL-2026-11
+Change Order Number: CO-EU-03
+Contract Number: EUR-9901
+Date Issued: 2026-09-12
+Owner: EuroTrans Logistics NV
+Contractor: Bâtiment & Génie Civil SA
+Title: Entrepôt Quai de Déchargement Rénovation
+Reason: owner_request
+Change Type: additive
+Status: approved
+
+Line Items:
+Item: Nivellement de quai hydraulique | Qty: 2 | Unit: EA | Unit Cost: 2.700,25 EUR | Amount: 5.400,50 EUR
+
+Subtotal: 5.400,50 EUR
+Markup: 0,00 EUR
+Tax: 0,00 EUR
+Total Amount: 5.400,50 EUR
+Currency: EUR
+Schedule Impact Days: 0

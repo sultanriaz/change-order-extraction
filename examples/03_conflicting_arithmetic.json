@@ -1,0 +1,324 @@
+{
+  "orders": [
+    {
+      "project_name": {
+        "value": null,
+        "normalized_value": null,
+        "confidence": 0.0,
+        "evidence": null,
+        "page": null,
+        "flags": [],
+        "model_confidence": null
+      },
+      "project_number": {
+        "value": null,
+        "normalized_value": null,
+        "confidence": 0.0,
+        "evidence": null,
+        "page": null,
+        "flags": [],
+        "model_confidence": null
+      },
+      "change_order_number": {
+        "value": "CO-055",
+        "normalized_value": "CO-055",
+        "confidence": 0.9367,
+        "evidence": "Change Order Number: CO-055",
+        "page": 1,
+        "flags": [],
+        "model_confidence": null
+      },
+      "contract_number": {
+        "value": null,
+        "normalized_value": null,
+        "confidence": 0.0,
+        "evidence": null,
+        "page": null,
+        "flags": [],
+        "model_confidence": null
+      },
+      "revision_number": {
+        "value": null,
+        "normalized_value": null,
+        "confidence": 0.0,
+        "evidence": null,
+        "page": null,
+        "flags": [],
+        "model_confidence": null
+      },
+      "date_issued": {
+        "value": "04/05/2026",
+        "normalized_value": null,
+        "confidence": 0.9418,
+        "evidence": "Date Issued: 04/05/2026",
+        "page": 1,
+        "flags": [
+          "ambiguous_date"
+        ],
+        "model_confidence": null
+      },
+      "owner": {
+        "value": "Riverfront Partners LLC",
+        "normalized_value": "Riverfront Partners LLC",
+        "confidence": 0.9367,
+        "evidence": "Owner: Riverfront Partners LLC",
+        "page": 1,
+        "flags": [],
+        "model_confidence": null
+      },
+      "contractor": {
+        "value": "Delta Commercial Builders",
+        "normalized_value": "Delta Commercial Builders",
+        "confidence": 0.9367,
+        "evidence": "Contractor: Delta Commercial Builders",
+        "page": 1,
+        "flags": [],
+        "model_confidence": null
+      },
+      "architect_or_engineer": {
+        "value": null,
+        "normalized_value": null,
+        "confidence": 0.0,
+        "evidence": null,
+        "page": null,
+        "flags": [],
+        "model_confidence": null
+      },
+      "requested_by": {
+        "value": null,
+        "normalized_value": null,
+        "confidence": 0.0,
+        "evidence": null,
+        "page": null,
+        "flags": [],
+        "model_confidence": null
+      },
+      "title": {
+        "value": "Hardscape Paver Upgrades",
+        "normalized_value": "Hardscape Paver Upgrades",
+        "confidence": 0.9367,
+        "evidence": "Title: Hardscape Paver Upgrades",
+        "page": 1,
+        "flags": [],
+        "model_confidence": null
+      },
+      "description": {
+        "value": null,
+        "normalized_value": null,
+        "confidence": 0.0,
+        "evidence": null,
+        "page": null,
+        "flags": [],
+        "model_confidence": null
+      },
+      "reason": {
+        "value": "owner_request",
+        "normalized_value": "owner_request",
+        "confidence": 0.9367,
+        "evidence": "Reason: owner_request",
+        "page": 1,
+        "flags": [],
+        "model_confidence": null
+      },
+      "change_type": {
+        "value": "additive",
+        "normalized_value": "additive",
+        "confidence": 0.9367,
+        "evidence": "Change Type: additive",
+        "page": 1,
+        "flags": [],
+        "model_confidence": null
+      },
+      "line_items": [
+        {
+          "description": {
+            "value": "Architectural concrete pavers",
+            "normalized_value": "Architectural concrete pavers",
+            "confidence": 0.9367,
+            "evidence": "Item: Architectural concrete pavers | Qty: 500 | Unit: SF | Unit Cost: $20.00 | Amount: $10,000.00 | Code: 32-140",
+            "page": 1,
+            "flags": [],
+            "model_confidence": null
+          },
+          "quantity": {
+            "value": 500.0,
+            "normalized_value": 500.0,
+            "confidence": 0.9367,
+            "evidence": "Item: Architectural concrete pavers | Qty: 500 | Unit: SF | Unit Cost: $20.00 | Amount: $10,000.00 | Code: 32-140",
+            "page": 1,
+            "flags": [],
+            "model_confidence": null
+          },
+          "unit": {
+            "value": "SF",
+            "normalized_value": "SF",
+            "confidence": 0.9367,
+            "evidence": "Item: Architectural concrete pavers | Qty: 500 | Unit: SF | Unit Cost: $20.00 | Amount: $10,000.00 | Code: 32-140",
+            "page": 1,
+            "flags": [],
+            "model_confidence": null
+          },
+          "unit_cost": {
+            "value": 20.0,
+            "normalized_value": 20.0,
+            "confidence": 0.9367,
+            "evidence": "Item: Architectural concrete pavers | Qty: 500 | Unit: SF | Unit Cost: $20.00 | Amount: $10,000.00 | Code: 32-140",
+            "page": 1,
+            "flags": [],
+            "model_confidence": null
+          },
+          "amount": {
+            "value": 10000.0,
+            "normalized_value": 10000.0,
+            "confidence": 0.9367,
+            "evidence": "Item: Architectural concrete pavers | Qty: 500 | Unit: SF | Unit Cost: $20.00 | Amount: $10,000.00 | Code: 32-140",
+            "page": 1,
+            "flags": [],
+            "model_confidence": null
+          },
+          "cost_code": {
+            "value": "32-140",
+            "normalized_value": "32-140",
+            "confidence": 0.9367,
+            "evidence": "Item: Architectural concrete pavers | Qty: 500 | Unit: SF | Unit Cost: $20.00 | Amount: $10,000.00 | Code: 32-140",
+            "page": 1,
+            "flags": [],
+            "model_confidence": null
+          }
+        }
+      ],
+      "subtotal": {
+        "value": 10000.0,
+        "normalized_value": 10000.0,
+        "confidence": 0.9367,
+        "evidence": "Subtotal: $10,000.00",
+        "page": 1,
+        "flags": [],
+        "model_confidence": null
+      },
+      "markup": {
+        "value": 1000.0,
+        "normalized_value": 1000.0,
+        "confidence": 0.9367,
+        "evidence": "Markup: $1,000.00",
+        "page": 1,
+        "flags": [],
+        "model_confidence": null
+      },
+      "tax": {
+        "value": 500.0,
+        "normalized_value": 500.0,
+        "confidence": 0.9367,
+        "evidence": "Tax: $500.00",
+        "page": 1,
+        "flags": [],
+        "model_confidence": null
+      },
+      "total_amount": {
+        "value": 14000.0,
+        "normalized_value": 14000.0,
+        "confidence": 0.9418,
+        "evidence": "Total Amount: $14,000.00",
+        "page": 1,
+        "flags": [
+          "arithmetic_mismatch"
+        ],
+        "model_confidence": null
+      },
+      "currency": {
+        "value": "USD",
+        "normalized_value": "USD",
+        "confidence": 0.9367,
+        "evidence": "Currency: USD",
+        "page": 1,
+        "flags": [],
+        "model_confidence": null
+      },
+      "original_contract_sum": {
+        "value": 500000.0,
+        "normalized_value": 500000.0,
+        "confidence": 0.9367,
+        "evidence": "Original Contract Sum: $500,000.00",
+        "page": 1,
+        "flags": [],
+        "model_confidence": null
+      },
+      "revised_contract_sum": {
+        "value": 514000.0,
+        "normalized_value": 514000.0,
+        "confidence": 0.9367,
+        "evidence": "Revised Contract Sum: $514,000.00",
+        "page": 1,
+        "flags": [],
+        "model_confidence": null
+      },
+      "schedule_impact_days": {
+        "value": null,
+        "normalized_value": null,
+        "confidence": 0.0,
+        "evidence": null,
+        "page": null,
+        "flags": [],
+        "model_confidence": null
+      },
+      "original_completion_date": {
+        "value": null,
+        "normalized_value": null,
+        "confidence": 0.0,
+        "evidence": null,
+        "page": null,
+        "flags": [],
+        "model_confidence": null
+      },
+      "new_completion_date": {
+        "value": null,
+        "normalized_value": null,
+        "confidence": 0.0,
+        "evidence": null,
+        "page": null,
+        "flags": [],
+        "model_confidence": null
+      },
+      "status": {
+        "value": "pending",
+        "normalized_value": "pending",
+        "confidence": 0.9367,
+        "evidence": "Status: pending",
+        "page": 1,
+        "flags": [],
+        "model_confidence": null
+      },
+      "signatures": []
+    }
+  ],
+  "document_confidence": 0.9367,
+  "needs_review": true,
+  "validation_report": [
+    {
+      "code": "arithmetic_mismatch",
+      "severity": "error",
+      "field": "total_amount",
+      "message": "Subtotal + markup + tax differs from total"
+    },
+    {
+      "code": "ambiguous_date",
+      "severity": "warning",
+      "field": "date_issued",
+      "message": "Date order cannot be inferred from the document"
+    }
+  ],
+  "warnings": [],
+  "metadata": {
+    "model": "mock-regex-v1",
+    "prompt_version": "co-extract-2026-10-v1",
+    "latency_ms": 5,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_estimate": 0.0,
+    "source_hash": "e4d74f7eec82927ec9b52737617a1a406fdb69b4897dcad954ef865173357df4",
+    "pipeline_version": "0.1.0",
+    "trace_id": "d5133467a666459f",
+    "cache_hit": false,
+    "confidence_mode": "dev_fitted"
+  }
+}

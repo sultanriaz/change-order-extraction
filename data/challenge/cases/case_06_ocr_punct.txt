@@ -1,0 +1,22 @@
+CHANGE ORDER MEMO
+Project Name: Oakridge Elementary Expansion
+Project Number: OE-400
+Change Order Number: CO-17
+Contract Number: C-9002
+Date Issued: 2026-08-14
+Owner: Oakridge School Board
+Contractor: Tri-County Builders
+Title: Foundation Underpinning at Classroom Wing
+Reason: unforeseen_condition
+Change Type: additive
+Status: pending
+
+Line Item:
+Item: Micropile installation | Qty: 10 | Unit: EA | Unit Cost: $1,200.00 | Amount: $12,000.00
+
+Subtotal: $12,000.00
+Markup: $1,200.00
+Tax: $0.00
+Total Amount: $13,200.00
+Currency: USD
+Schedule Impact Days: 7

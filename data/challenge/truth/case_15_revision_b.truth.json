@@ -1,0 +1,18 @@
+{
+  "orders": [
+    {
+      "project_name": "Harbor Marina Docks",
+      "project_number": "HMD-101",
+      "change_order_number": "CO-008",
+      "revision_number": "Rev B",
+      "date_issued": "2026-06-18",
+      "owner": "Marina Port Authority",
+      "contractor": "Coastal Marine Contractors LLC",
+      "title": "Gangway Reinforcement and Lighting",
+      "total_amount": 18400.0,
+      "currency": "USD",
+      "status": "approved",
+      "schedule_impact_days": 3
+    }
+  ]
+}

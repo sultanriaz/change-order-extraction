@@ -1,0 +1,36 @@
+MONTHLY CHANGE ORDER SUMMARY BATCH
+Project Name: Riverside Medical Pavilion
+Project Number: MED-77
+Contract Number: CT-1044
+Owner: Riverside Health System
+Contractor: Turner-Apex JV
+
+--- FIRST CHANGE ORDER ---
+Change Order Number: CO-101
+Date Issued: 2026-07-01
+Title: HVAC Return Duct Routing in Operating Room 3
+Reason: unforeseen_condition
+Change Type: additive
+Status: approved
+Item: Custom Stainless Ductwork | Qty: 1 | Unit: LS | Unit Cost: $3,200.00 | Amount: $3,200.00
+Subtotal: $3,200.00
+Markup: $0.00
+Tax: $0.00
+Total Amount: $3,200.00
+Currency: USD
+Schedule Impact Days: 2
+
+--- SECOND CHANGE ORDER ---
+Change Order Number: CO-102
+Date Issued: 2026-07-02
+Title: Electrical Panel Emergency Feed Relocation
+Reason: owner_request
+Change Type: additive
+Status: approved
+Item: 400A Feeder Cable & Conduit | Qty: 120 | Unit: LF | Unit Cost: $37.50 | Amount: $4,500.00
+Subtotal: $4,500.00
+Markup: $0.00
+Tax: $0.00
+Total Amount: $4,500.00
+Currency: USD
+Schedule Impact Days: 0

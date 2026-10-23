@@ -1,0 +1,23 @@
+{
+  "orders": [
+    {
+      "project_name": "Oakridge Elementary Expansion",
+      "project_number": "OE-400",
+      "change_order_number": "CO-17",
+      "contract_number": "C-9002",
+      "date_issued": "2026-08-14",
+      "owner": "Oakridge School Board",
+      "contractor": "Tri-County Builders",
+      "title": "Foundation Underpinning at Classroom Wing",
+      "reason": "unforeseen_condition",
+      "change_type": "additive",
+      "status": "pending",
+      "subtotal": 12000.0,
+      "markup": 1200.0,
+      "tax": 0.0,
+      "total_amount": 13200.0,
+      "currency": "USD",
+      "schedule_impact_days": 7
+    }
+  ]
+}

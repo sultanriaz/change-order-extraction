@@ -1,0 +1,256 @@
+[
+  {
+    "id": "case_01_clean_single_page",
+    "source": "data/challenge/cases/case_01_clean_single_page.txt",
+    "truth": "data/challenge/truth/case_01_clean_single_page.truth.json",
+    "tags": [
+      "clean",
+      "single_page"
+    ],
+    "category": "Standard Clean"
+  },
+  {
+    "id": "case_02_complex_table",
+    "source": "data/challenge/cases/case_02_complex_table.pdf",
+    "truth": "data/challenge/truth/case_02_complex_table.truth.json",
+    "tags": [
+      "pdf",
+      "complex_table"
+    ],
+    "category": "Complex PDF"
+  },
+  {
+    "id": "case_03_multipage_continued",
+    "source": "data/challenge/cases/case_03_multipage_continued.txt",
+    "truth": "data/challenge/truth/case_03_multipage_continued.truth.json",
+    "tags": [
+      "multipage",
+      "split_lines"
+    ],
+    "category": "Multi-page"
+  },
+  {
+    "id": "case_04_multiple_cos",
+    "source": "data/challenge/cases/case_04_multiple_cos.txt",
+    "truth": "data/challenge/truth/case_04_multiple_cos.truth.json",
+    "tags": [
+      "multiple_orders"
+    ],
+    "category": "Multi-Order"
+  },
+  {
+    "id": "case_05_scanned_ocr",
+    "source": "data/challenge/cases/case_05_scanned_ocr.txt",
+    "truth": "data/challenge/truth/case_05_scanned_ocr.truth.json",
+    "tags": [
+      "ocr_noise",
+      "scanned"
+    ],
+    "category": "OCR Noise"
+  },
+  {
+    "id": "case_06_ocr_punct",
+    "source": "data/challenge/cases/case_06_ocr_punct.txt",
+    "truth": "data/challenge/truth/case_06_ocr_punct.truth.json",
+    "tags": [
+      "ocr_digits"
+    ],
+    "category": "OCR Digits"
+  },
+  {
+    "id": "case_07_negative_credit",
+    "source": "data/challenge/cases/case_07_negative_credit.txt",
+    "truth": "data/challenge/truth/case_07_negative_credit.truth.json",
+    "tags": [
+      "credit",
+      "negative"
+    ],
+    "category": "Negative & Credits"
+  },
+  {
+    "id": "case_08_parenthesized_currency",
+    "source": "data/challenge/cases/case_08_parenthesized_currency.txt",
+    "truth": "data/challenge/truth/case_08_parenthesized_currency.truth.json",
+    "tags": [
+      "parenthesized",
+      "negative"
+    ],
+    "category": "Parenthesized Numbers"
+  },
+  {
+    "id": "case_09_multiple_currencies",
+    "source": "data/challenge/cases/case_09_multiple_currencies.txt",
+    "truth": "data/challenge/truth/case_09_multiple_currencies.truth.json",
+    "tags": [
+      "eur",
+      "currency_format"
+    ],
+    "category": "Multi-Currency"
+  },
+  {
+    "id": "case_10_ambiguous_date",
+    "source": "data/challenge/cases/case_10_ambiguous_date.txt",
+    "truth": "data/challenge/truth/case_01_clean_single_page.truth.json",
+    "tags": [
+      "ambiguous_date"
+    ],
+    "category": "Ambiguous Dates"
+  },
+  {
+    "id": "case_11_missing_fields",
+    "source": "data/challenge/cases/case_11_missing_fields.txt",
+    "truth": "data/challenge/truth/case_11_missing_fields.truth.json",
+    "tags": [
+      "missing_fields",
+      "sparse"
+    ],
+    "category": "Sparse Incomplete"
+  },
+  {
+    "id": "case_12_tbd_amount",
+    "source": "data/challenge/cases/case_12_tbd_amount.txt",
+    "truth": "data/challenge/truth/case_12_tbd_amount.truth.json",
+    "tags": [
+      "tbd",
+      "unpriced"
+    ],
+    "category": "Unpriced TBD"
+  },
+  {
+    "id": "case_13_conflicting_totals",
+    "source": "data/challenge/cases/case_13_conflicting_totals.txt",
+    "truth": "data/challenge/truth/case_13_conflicting_totals.truth.json",
+    "tags": [
+      "arithmetic_mismatch",
+      "conflict"
+    ],
+    "category": "Math Mismatch"
+  },
+  {
+    "id": "case_14_bad_line_math",
+    "source": "data/challenge/cases/case_14_bad_line_math.txt",
+    "truth": "data/challenge/truth/case_14_bad_line_math.truth.json",
+    "tags": [
+      "line_math_mismatch"
+    ],
+    "category": "Math Mismatch"
+  },
+  {
+    "id": "case_15_revision_b",
+    "source": "data/challenge/cases/case_15_revision_b.txt",
+    "truth": "data/challenge/truth/case_15_revision_b.truth.json",
+    "tags": [
+      "revision"
+    ],
+    "category": "Revisions"
+  },
+  {
+    "id": "case_16_rejected_status",
+    "source": "data/challenge/cases/case_16_rejected_status.txt",
+    "truth": "data/challenge/truth/case_16_rejected_status.truth.json",
+    "tags": [
+      "rejected",
+      "status"
+    ],
+    "category": "Status Variations"
+  },
+  {
+    "id": "case_17_prompt_injection",
+    "source": "data/challenge/cases/case_17_prompt_injection.txt",
+    "truth": "data/challenge/truth/case_17_prompt_injection.truth.json",
+    "tags": [
+      "prompt_injection",
+      "security"
+    ],
+    "category": "Security Adversarial"
+  },
+  {
+    "id": "case_18_misleading_parties",
+    "source": "data/challenge/cases/case_18_misleading_parties.txt",
+    "truth": "data/challenge/truth/case_18_misleading_parties.truth.json",
+    "tags": [
+      "distractor_parties"
+    ],
+    "category": "Party Roles"
+  },
+  {
+    "id": "case_19_distractor_numbers",
+    "source": "data/challenge/cases/case_19_distractor_numbers.txt",
+    "truth": "data/challenge/truth/case_19_distractor_numbers.truth.json",
+    "tags": [
+      "distractors",
+      "phone_invoice"
+    ],
+    "category": "Distractors"
+  },
+  {
+    "id": "case_20_unrelated_doc",
+    "source": "data/challenge/cases/case_20_unrelated_doc.txt",
+    "truth": "data/challenge/truth/case_20_unrelated_doc.truth.json",
+    "tags": [
+      "unrelated",
+      "non_change_order"
+    ],
+    "category": "Non-CO Document"
+  },
+  {
+    "id": "case_21_empty_input",
+    "source": "data/challenge/cases/case_21_empty_input.txt",
+    "truth": "data/challenge/truth/case_21_empty_input.truth.json",
+    "tags": [
+      "empty",
+      "corrupt"
+    ],
+    "category": "Empty Input"
+  },
+  {
+    "id": "case_22_zero_cost",
+    "source": "data/challenge/cases/case_22_zero_cost.txt",
+    "truth": "data/challenge/truth/case_22_zero_cost.truth.json",
+    "tags": [
+      "zero_cost",
+      "no_cost"
+    ],
+    "category": "Zero Cost"
+  },
+  {
+    "id": "case_23_schedule_only",
+    "source": "data/challenge/cases/case_23_schedule_only.txt",
+    "truth": "data/challenge/truth/case_23_schedule_only.truth.json",
+    "tags": [
+      "time_only",
+      "schedule"
+    ],
+    "category": "Schedule Only"
+  },
+  {
+    "id": "case_24_many_items",
+    "source": "data/challenge/cases/case_24_many_items.pdf",
+    "truth": "data/challenge/truth/case_24_many_items.truth.json",
+    "tags": [
+      "many_items",
+      "pdf"
+    ],
+    "category": "Large Item Count"
+  },
+  {
+    "id": "case_25_void_status",
+    "source": "data/challenge/cases/case_25_void_status.txt",
+    "truth": "data/challenge/truth/case_25_void_status.truth.json",
+    "tags": [
+      "void",
+      "status_conflict"
+    ],
+    "category": "Void / Conflicting Approval"
+  },
+  {
+    "id": "case_26_email_thread",
+    "source": "data/challenge/cases/case_26_email_thread.txt",
+    "truth": "data/challenge/truth/case_26_email_thread.truth.json",
+    "tags": [
+      "email",
+      "unstructured"
+    ],
+    "category": "Unstructured Email"
+  }
+]

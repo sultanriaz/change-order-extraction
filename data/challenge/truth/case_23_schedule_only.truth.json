@@ -1,0 +1,23 @@
+{
+  "orders": [
+    {
+      "project_name": "Interstate 90 Soundwall Construction",
+      "project_number": "DOT-I90-26",
+      "change_order_number": "CO-007-TIME",
+      "contract_number": "CT-10992",
+      "date_issued": "2026-07-10",
+      "owner": "State Department of Transportation",
+      "contractor": "Kiewit Infrastructure Co.",
+      "title": "Weather Delay Time Extension - Rain Events in May",
+      "description": "Granting 14 non-compensable calendar day extension for severe flooding delay.",
+      "reason": "unforeseen_condition",
+      "change_type": "time_only",
+      "status": "approved",
+      "total_amount": 0.0,
+      "currency": "USD",
+      "schedule_impact_days": 14,
+      "original_completion_date": "2026-10-01",
+      "new_completion_date": "2026-10-15"
+    }
+  ]
+}

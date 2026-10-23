@@ -1,0 +1,23 @@
+{
+  "model_id": "gemini-2.5-flash",
+  "calibrated": true,
+  "feature_names": [
+    "grounding",
+    "validation",
+    "agreement",
+    "source_quality",
+    "model_reported"
+  ],
+  "weights": [
+    -0.003355888278446996,
+    -0.037040785318028374,
+    -0.001677944139223498,
+    6.375816362318775,
+    -0.0016779441391216168
+  ],
+  "intercept": -4.156424280778479,
+  "review_threshold": 1.01,
+  "dev_size": 270,
+  "target_dev_precision": 0.95,
+  "dev_document_autoaccepted": 0
+}

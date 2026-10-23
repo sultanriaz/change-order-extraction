@@ -1,0 +1,17 @@
+{
+  "orders": [
+    {
+      "project_name": "South Waterfront Tower",
+      "project_number": "SWT-10",
+      "change_order_number": "CO-067",
+      "contract_number": "CT-4402",
+      "date_issued": "2026-07-15",
+      "owner": "Waterfront Holdings LLC",
+      "contractor": "Skanska USA Building",
+      "title": "Elevator Shaft Drywall Fire Rating",
+      "total_amount": 9800.0,
+      "currency": "USD",
+      "status": "approved"
+    }
+  ]
+}

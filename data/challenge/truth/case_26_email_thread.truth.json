@@ -1,0 +1,22 @@
+{
+  "orders": [
+    {
+      "project_name": "Valley Hospital ER Expansion",
+      "project_number": "VH-2026",
+      "change_order_number": "CO-2026-88",
+      "contract_number": "CT-4128",
+      "date_issued": "2026-10-12",
+      "contractor": "Apex Construction Services",
+      "title": "Relocate existing medical gas lines behind the proposed triage partition wall",
+      "reason": "unforeseen_condition",
+      "change_type": "additive",
+      "status": "approved",
+      "subtotal": 10250.0,
+      "markup": 1025.0,
+      "total_amount": 11275.0,
+      "currency": "USD",
+      "schedule_impact_days": 3,
+      "new_completion_date": "2026-11-20"
+    }
+  ]
+}

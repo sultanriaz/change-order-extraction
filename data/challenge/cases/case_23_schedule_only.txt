@@ -1,0 +1,19 @@
+TIME EXTENSION CHANGE ORDER
+Project Name: Interstate 90 Soundwall Construction
+Project Number: DOT-I90-26
+Change Order Number: CO-007-TIME
+Contract Number: CT-10992
+Date Issued: 2026-07-10
+Owner: State Department of Transportation
+Contractor: Kiewit Infrastructure Co.
+Title: Weather Delay Time Extension - Rain Events in May
+Description: Granting 14 non-compensable calendar day extension for severe flooding delay.
+Reason: unforeseen_condition
+Change Type: time_only
+Status: approved
+
+Total Amount: $0.00
+Currency: USD
+Schedule Impact Days: 14
+Original Completion Date: 2026-10-01
+New Completion Date: 2026-10-15

@@ -1,0 +1,14 @@
+{
+  "orders": [
+    {
+      "project_name": "Midtown Corporate Center",
+      "change_order_number": "CO-099",
+      "date_issued": "2026-09-01",
+      "owner": "Midtown Properties REIT",
+      "contractor": "Structure Tone",
+      "subtotal": 35100.0,
+      "total_amount": 35100.0,
+      "currency": "USD"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+CHANGE ORDER # CO-071
+Project Name: North Valley Water Plant
+Project Number: NVW-44
+Date Issued: 2026-09-05
+Owner: Water Reclamation District
+Contractor: Cascade Industrial
+Title: Additional Butterfly Valve
+Reason: code_requirement
+Change Type: additive
+Status: pending
+
+Line Item:
+Item: 12-inch Resilient Seat Valve | Qty: 2 | Unit: EA | Unit Cost: $1,500.00 | Amount: $4,500.00
+
+Subtotal: $4,500.00
+Markup: $0.00
+Tax: $0.00
+Total Amount: $4,500.00
+Currency: USD

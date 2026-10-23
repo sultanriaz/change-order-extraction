@@ -1,0 +1,27 @@
+{
+  "orders": [
+    {
+      "project_name": "Northside High School Annex",
+      "project_number": "SCH-2026",
+      "change_order_number": "CO-088",
+      "contract_number": "CT-9912",
+      "date_issued": "2026-06-01",
+      "owner": "Unified School District 4",
+      "contractor": "Benchmark Construction Inc.",
+      "title": "Extended Site Utilities and Drainage Basin",
+      "reason": "unforeseen_condition",
+      "change_type": "additive",
+      "status": "approved",
+      "subtotal": 98050.0,
+      "markup": 9805.0,
+      "tax": 0.0,
+      "total_amount": 107855.0,
+      "currency": "USD",
+      "original_contract_sum": 4500000.0,
+      "revised_contract_sum": 4607855.0,
+      "schedule_impact_days": 12,
+      "original_completion_date": "2027-02-15",
+      "new_completion_date": "2027-02-27"
+    }
+  ]
+}

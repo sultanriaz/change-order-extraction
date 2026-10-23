@@ -1,0 +1,44 @@
+CHANGE ORDER # CO-088 (Page 1 of 3)
+Project Name: Northside High School Annex
+Project Number: SCH-2026
+Contract Number: CT-9912
+Date Issued: 2026-06-01
+Owner: Unified School District 4
+Contractor: Benchmark Construction Inc.
+Title: Extended Site Utilities and Drainage Basin
+Reason: unforeseen_condition
+Change Type: additive
+Status: approved
+
+LINE ITEMS (Continued on Page 2):
+Item: 24-inch Reinforced Concrete Pipe | Qty: 200 | Unit: LF | Unit Cost: $110.00 | Amount: $22,000.00 | Code: 33-400
+Item: Precast Storm Manholes 48in | Qty: 3 | Unit: EA | Unit Cost: $4,200.00 | Amount: $12,600.00 | Code: 33-400
+Item: Trench Excavation & Backfill | Qty: 800 | Unit: CY | Unit Cost: $35.00 | Amount: $28,000.00 | Code: 31-230
+CHANGE ORDER # CO-088 (Page 2 of 3)
+Project Name: Northside High School Annex
+Project Number: SCH-2026
+
+LINE ITEMS (Continued from Page 1):
+Item: Rip-Rap Energy Dissipator Rock | Qty: 60 | Unit: TON | Unit Cost: $85.00 | Amount: $5,100.00 | Code: 31-370
+Item: Detention Basin Embankment Fill | Qty: 1200 | Unit: CY | Unit Cost: $18.00 | Amount: $21,600.00 | Code: 31-230
+Item: Hydroseeding & Erosion Blanket | Qty: 3500 | Unit: SY | Unit Cost: $2.50 | Amount: $8,750.00 | Code: 32-920
+CHANGE ORDER # CO-088 (Page 3 of 3)
+Project Name: Northside High School Annex
+Change Order Number: CO-088
+
+FINANCIAL RECAPITULATION:
+Subtotal: $98,050.00
+Markup: $9,805.00
+Tax: $0.00
+Total Amount: $107,855.00
+Currency: USD
+
+Original Contract Sum: $4,500,000.00
+Revised Contract Sum: $4,607,855.00
+Schedule Impact Days: 12
+Original Completion Date: 2027-02-15
+New Completion Date: 2027-02-27
+
+Signatures:
+Contractor Representative: /s/ John Doe | Role: Project Executive | Date: 2026-06-03
+Owner Representative: /s/ Jane Smith | Role: Director of Facilities | Date: 2026-06-05

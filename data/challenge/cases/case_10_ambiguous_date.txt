@@ -1,0 +1,13 @@
+CHANGE ORDER REQUEST
+Project Name: Pine Creek Bridge
+Project Number: PCB-802
+Change Order Number: CO-019
+Date Issued: 04/05/2026
+Owner: County Road Commission
+Contractor: BridgePro Constructors LLC
+Title: Additional Riprap Stone at Pier 2
+Reason: unforeseen_condition
+Change Type: additive
+Status: pending
+Total Amount: $6,500.00
+Currency: USD

@@ -1,0 +1,28 @@
+CREDIT CHANGE ORDER
+Project Name: Harbor View Condominiums
+Project Number: HVC-12
+Change Order Number: CO-022C
+Contract Number: CT-4100
+Date Issued: 2026-05-19
+Owner: Harbor View Development LLC
+Contractor: Pacific Crest Builders Inc.
+
+Title: Deletion of Penthouse Spa Tub and Finishes
+Description: Credit back to Owner for deletion of luxury package scope in unit PH-2.
+Reason: owner_request
+Change Type: deductive
+Status: approved
+
+Line Items:
+Item: Omission of Whirlpool Spa Unit | Qty: 1 | Unit: EA | Unit Cost: -$5,400.00 | Amount: -$5,400.00 | Code: 11-400
+Item: Omission of Premium Marble Wall Tile | Qty: 300 | Unit: SF | Unit Cost: -$10.00 | Amount: -$3,000.00 | Code: 09-300
+
+Subtotal: -$8,400.00
+Markup: $0.00
+Tax: $0.00
+Total Amount: -$8,400.00
+Currency: USD
+
+Original Contract Sum: $2,400,000.00
+Revised Contract Sum: $2,391,600.00
+Schedule Impact Days: 0

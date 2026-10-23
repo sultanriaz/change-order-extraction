@@ -1,0 +1,17 @@
+{
+  "orders": [
+    {
+      "project_name": "Pine Creek Bridge",
+      "project_number": "PCB-802",
+      "change_order_number": "CO-019",
+      "owner": "County Road Commission",
+      "contractor": "BridgePro Constructors LLC",
+      "title": "Additional Riprap Stone at Pier 2",
+      "reason": "unforeseen_condition",
+      "change_type": "additive",
+      "status": "pending",
+      "total_amount": 6500.0,
+      "currency": "USD"
+    }
+  ]
+}

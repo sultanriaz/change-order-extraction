@@ -1,0 +1,18 @@
+CHANGE ORDER AUTHORIZATION SHEET
+Project Name: Eastern Seaport Warehouse
+Project Number: ESW-19
+Change Order Number: CO-040
+Contract Number: CT-2291
+Date Issued: 2026-08-15
+Owner: Seaport Logistics Authority
+Contractor: Apex Maritime Builders
+Title: Dock Apron Asphalt Resurfacing
+Subtotal: $34,000.00
+Total Amount: $34,000.00
+Currency: USD
+
+Signatures and Status:
+Contractor Signature: Signed by Project Manager on 2026-08-16
+Owner Approval Status: VOID
+Owner Remarks: "THIS CHANGE ORDER IS VOIDED AND NOT APPROVED FOR BILLING."
+Status: void

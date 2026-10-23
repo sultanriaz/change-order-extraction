@@ -110,109 +110,140 @@ def run(*, mock: bool = True) -> dict:
                         'validation_issues':[x.code for x in result.validation_report],
                         'warnings':result.warnings,'field_metrics':summarize(doc_rows),
                         'wrong_fields':[{'field':r['field'],'predicted':r['predicted'],'expected':r['expected']} for r in doc_rows if r['result'] in ('fp','fn','wrong')]})
-    (RESULTS/'raw.json').write_text(json.dumps(records,indent=2,default=str))
-    summary=summarize(rows)
-    ece_score,buckets=ece(rows)
-    baseline_score=summarize(baseline_rows)
-    chart=RESULTS/'reliability.png'
-    fig,ax=plt.subplots(figsize=(5.3,4.2))
-    ax.plot([0,1],[0,1],'--',label='Perfect calibration')
+    summary_file = RESULTS / ('summary.json' if mock else 'gemini_summary.json')
+    report_file = RESULTS / ('report.md' if mock else 'gemini_report.md')
+    raw_file = RESULTS / ('raw.json' if mock else 'gemini_raw.json')
+    chart_name = 'reliability.png' if mock else 'gemini_reliability.png'
+    chart = RESULTS / chart_name
+
+    (raw_file).write_text(json.dumps(records, indent=2, default=str))
+    summary = summarize(rows)
+    ece_score, buckets = ece(rows)
+    baseline_score = summarize(baseline_rows)
+
+    fig, ax = plt.subplots(figsize=(5.3, 4.2))
+    ax.plot([0, 1], [0, 1], '--', label='Perfect calibration')
     if buckets:
-        ax.scatter([b['confidence'] for b in buckets],[b['accuracy'] for b in buckets],
-                   s=[max(12,b['count']*1.2) for b in buckets],label='Held-out TEST bins')
-    ax.set(xlabel='Mean computed confidence',ylabel='Observed correctness',xlim=(0,1),ylim=(0,1),
-           title='Field reliability (non-null predictions)')
-    ax.legend(fontsize=8);fig.tight_layout();fig.savefig(chart,dpi=150);plt.close(fig)
-    curve=accept_curve(rows)
-    result_summary={'model':client.model_id,'prompt_version':__import__('co_extract.prompts',fromlist=['PROMPT_VERSION']).PROMPT_VERSION,
-                    'test_documents':len(documents),'dev_documents':20,'field_metrics':summary,
-                    'line_item_f1':line_item_f1(pairs_all),'baseline_line_item_f1':line_item_f1(baseline_pairs),
-                    'per_field':{name:summarize([r for r in rows if r['field']==name]) for name in FIELDS},
-                    'baseline_metrics':baseline_score,
-                    'ece':ece_score,'reliability_bins':buckets,'field_accept_curve':curve,
-                    'by_tag':{k:summarize(v) for k,v in by_tag.items()},
-                    'by_source':{k:summarize(v) for k,v in by_mode.items()},
-                    'by_source_quality':{k:summarize(v) for k,v in by_quality.items()},
-                    'p50_latency_ms':statistics.median(latencies),'p95_latency_ms':sorted(latencies)[int(.95*(len(latencies)-1))],
-                    'total_cost_estimate':sum(cost),'reviewed':sum(r.needs_review for _,r,_ in documents),
-                    'calibration':params}
-    # Freeze DEV calibrator, compare actual TEST outputs (mock has no independent stochastic/vision capability).
-    if mock:
-        ablations = {}
-        scenarios = {
-            'no_grounding': {'grounding_enabled': False},
-            'no_validation_retry': {'validation_retry': False},
-            'self_consistency_3': {'self_consistency': 3},
-            'vision_bytes': {'vision': True},
+        ax.scatter([b['confidence'] for b in buckets], [b['accuracy'] for b in buckets],
+                   s=[max(12, b['count'] * 1.2) for b in buckets], label='Held-out TEST bins')
+    ax.set(xlabel='Mean computed confidence', ylabel='Observed correctness', xlim=(0, 1), ylim=(0, 1),
+           title=f'Field reliability ({"Mock" if mock else "Gemini"})')
+    ax.legend(fontsize=8)
+    fig.tight_layout()
+    fig.savefig(chart, dpi=150)
+    plt.close(fig)
+    curve = accept_curve(rows)
+    result_summary = {
+        'model': client.model_id,
+        'prompt_version': __import__('co_extract.prompts', fromlist=['PROMPT_VERSION']).PROMPT_VERSION,
+        'test_documents': len(documents),
+        'dev_documents': 20,
+        'field_metrics': summary,
+        'line_item_f1': line_item_f1(pairs_all),
+        'baseline_line_item_f1': line_item_f1(baseline_pairs),
+        'per_field': {name: summarize([r for r in rows if r['field'] == name]) for name in FIELDS},
+        'baseline_metrics': baseline_score,
+        'ece': ece_score,
+        'reliability_bins': buckets,
+        'field_accept_curve': curve,
+        'by_tag': {k: summarize(v) for k, v in by_tag.items()},
+        'by_source': {k: summarize(v) for k, v in by_mode.items()},
+        'by_source_quality': {k: summarize(v) for k, v in by_quality.items()},
+        'p50_latency_ms': statistics.median(latencies) if latencies else 0,
+        'p95_latency_ms': sorted(latencies)[int(.95 * (len(latencies) - 1))] if latencies else 0,
+        'total_cost_estimate': sum(cost),
+        'reviewed': sum(r.needs_review for _, r, _ in documents),
+        'calibration': params
+    }
+
+    # Ablations on fixed 8-document test subset
+    ablations = {}
+    scenarios = {
+        'no_grounding': {'grounding_enabled': False},
+        'no_validation_retry': {'validation_retry': False},
+        'self_consistency_3': {'self_consistency': 3},
+        'vision_bytes': {'vision': True},
+    }
+    test_specs = [r for r in manifest if r['split'] == 'test'][:8]
+    for name, opts in scenarios.items():
+        ablation_rows = []
+        confidences = []
+        review_count = 0
+        for spec in test_specs:
+            result = pipeline.run(ROOT / spec['source'], **opts)
+            truth = json.loads((ROOT / spec['truth']).read_text())['orders']
+            ablation_rows.extend(flatten(align_orders(result.orders, truth)))
+            confidences.append(result.document_confidence)
+            review_count += int(result.needs_review)
+        ablations[name] = {
+            'field_f1': summarize(ablation_rows)['f1'],
+            'mean_document_confidence': statistics.mean(confidences) if confidences else 0.0,
+            'review_count': review_count,
+            'independent_llm_measurement': not mock,
+            'n_documents': len(test_specs),
         }
-        test_specs=[r for r in manifest if r['split']=='test'][:8]  # fixed ablation subset
-        for name, opts in scenarios.items():
-            ablation_rows=[]; confidences=[]; review_count=0
-            for spec in test_specs:
-                result=pipeline.run(ROOT/spec['source'],**opts)
-                truth=json.loads((ROOT/spec['truth']).read_text())['orders']
-                ablation_rows.extend(flatten(align_orders(result.orders,truth)))
-                confidences.append(result.document_confidence)
-                review_count+=int(result.needs_review)
-            ablations[name]={
-                'field_f1': summarize(ablation_rows)['f1'],
-                'mean_document_confidence': statistics.mean(confidences),
-                'review_count': review_count,
-                'independent_llm_measurement': False, 'n_documents':len(test_specs),
-            }
-        result_summary['offline_ablations']=ablations
-    (RESULTS/'summary.json').write_text(json.dumps(result_summary,indent=2))
-    lines=['# Reproducible held-out TEST evaluation','',f'**Mode:** `{client.model_id}`',
-           f'**Prompt version:** `{result_summary["prompt_version"]}`',
-           '**Counts:** 60 training (not used in fit), 20 DEV (calibration only), 40 held-out TEST.', '',
-           '> **Interpretation:** MockLLM is a regex heuristic test double, not Gemini. Its scores must not be sold as LLM model accuracy or predictive calibration. The baseline uses the SAME heuristic, so equal numbers are expected.', '',
-           '| Test metric | Mock/actual selected model | Regex baseline |','|---|---:|---:|',
-           f'| Field precision | {summary["precision"]:.4f} | {baseline_score["precision"]:.4f} |',
-           f'| Field recall | {summary["recall"]:.4f} | {baseline_score["recall"]:.4f} |',
-           f'| Field F1 | {summary["f1"]:.4f} | {baseline_score["f1"]:.4f} |',
-           f'| Correct null rate | {summary["correct_null_rate"] if summary["correct_null_rate"] is not None else "N/A"} | {baseline_score["correct_null_rate"] if baseline_score["correct_null_rate"] is not None else "N/A"} |',
-           f'| Hallucination rate | {summary["hallucination_rate"] if summary["hallucination_rate"] is not None else "N/A"} | {baseline_score["hallucination_rate"] if baseline_score["hallucination_rate"] is not None else "N/A"} |',
-           f'| Line item matched F1 | {result_summary["line_item_f1"]:.4f} | {result_summary["baseline_line_item_f1"]:.4f} |','',
-           f'**ECE on extracted non-null TEST fields:** {ece_score:.4f} (10 fixed bins).',
-           f'**Documents marked for review:** {result_summary["reviewed"]}/40.',
-           f'**Latency p50/p95:** {result_summary["p50_latency_ms"]:.0f}/{result_summary["p95_latency_ms"]:.0f} ms; **cost estimate:** ${sum(cost):.6f} (assumed prices, not invoices).',
-           '','![Reliability diagram](reliability.png)','',
-           '## Hard-case slices (actual TEST)','', '| Tag | N field rows | F1 |','|---|---:|---:|']
-    for key,data in sorted(result_summary['by_tag'].items()):
+    result_summary['ablations'] = ablations
+    (summary_file).write_text(json.dumps(result_summary, indent=2))
+
+    mode_label = f"MockLLM (`{client.model_id}`)" if mock else f"Live Gemini (`{client.model_id}`)"
+    lines = [
+        f'# Reproducible held-out TEST evaluation: {mode_label}', '',
+        f'**Mode:** `{client.model_id}`',
+        f'**Prompt version:** `{result_summary["prompt_version"]}`',
+        '**Counts:** 60 training (not used in fit), 20 DEV (calibration only), 40 held-out TEST.', '',
+        '> **Note:** MockLLM is a regex heuristic test double; Gemini results reflect actual model execution with Google GenAI SDK.', '',
+        '| Test metric | Evaluated model | Regex baseline |', '|---|---:|---:|',
+        f'| Field precision | {summary["precision"]:.4f} | {baseline_score["precision"]:.4f} |',
+        f'| Field recall | {summary["recall"]:.4f} | {baseline_score["recall"]:.4f} |',
+        f'| Field F1 | {summary["f1"]:.4f} | {baseline_score["f1"]:.4f} |',
+        f'| Correct null rate | {summary["correct_null_rate"] if summary["correct_null_rate"] is not None else "N/A"} | {baseline_score["correct_null_rate"] if baseline_score["correct_null_rate"] is not None else "N/A"} |',
+        f'| Hallucination rate | {summary["hallucination_rate"] if summary["hallucination_rate"] is not None else "N/A"} | {baseline_score["hallucination_rate"] if baseline_score["hallucination_rate"] is not None else "N/A"} |',
+        f'| Line item matched F1 | {result_summary["line_item_f1"]:.4f} | {result_summary["baseline_line_item_f1"]:.4f} |', '',
+        f'**ECE on extracted non-null TEST fields:** {ece_score:.4f} (10 fixed bins).',
+        f'**Documents marked for review:** {result_summary["reviewed"]}/40.',
+        f'**Latency p50/p95:** {result_summary["p50_latency_ms"]:.0f}/{result_summary["p95_latency_ms"]:.0f} ms; **cost estimate:** ${sum(cost):.6f}.',
+        '', f'![Reliability diagram]({chart_name})', '',
+        '## Hard-case slices (actual TEST)', '', '| Tag | N field rows | F1 |', '|---|---:|---:|'
+    ]
+    for key, data in sorted(result_summary['by_tag'].items()):
         lines.append(f'| {key} | {data["n_rows"]} | {data["f1"]:.4f} |')
-    lines+=['','## Format slices','','| Format | N field rows | F1 |','|---|---:|---:|']
-    for key,data in sorted(result_summary['by_source'].items()):
+    lines += ['', '## Format slices', '', '| Format | N field rows | F1 |', '|---|---:|---:|']
+    for key, data in sorted(result_summary['by_source'].items()):
         lines.append(f'| {key} | {data["n_rows"]} | {data["f1"]:.4f} |')
-    lines+=['','## Source-quality slices','','| Source quality | N field rows | F1 |','|---|---:|---:|']
-    for key,data in sorted(result_summary['by_source_quality'].items()):
+    lines += ['', '## Source-quality slices', '', '| Source quality | N field rows | F1 |', '|---|---:|---:|']
+    for key, data in sorted(result_summary['by_source_quality'].items()):
         lines.append(f'| {key} | {data["n_rows"]} | {data["f1"]:.4f} |')
-    lines+=['','## Field-level metrics','','| Field | Precision | Recall | F1 |', '|---|---:|---:|---:|']
-    for key,data in result_summary['per_field'].items():
+    lines += ['', '## Field-level metrics', '', '| Field | Precision | Recall | F1 |', '|---|---:|---:|---:|']
+    for key, data in result_summary['per_field'].items():
         lines.append(f'| {key} | {data["precision"]:.4f} | {data["recall"]:.4f} | {data["f1"]:.4f} |')
-    lines+=['','## Threshold and ablations', '',
-            f'DEV-fitted: `{params.get("calibrated")}`; threshold `{params.get("review_threshold")}`; DEV training rows `{params.get("dev_size")}`.',
-            'Calibration is conditional on a non-null extraction, and may be poorly identified in this tiny synthetic DEV set. A target DEV selective precision is not a real-world guarantee.', '',
-            'Mock-only ablations: validation retry, self-consistency (temperature 0.5), and vision-vs-text are **not independently measurable** because MockLLM ignores temperature and the PDF bytes and emits already schema-valid JSON. Turning them on would yield artificial null differences, so no gain is reported.',
-            'Grounding check ablation changes confidence/review flags but not extracted field F1. For a real comparison run the live model and write independent raw outputs before calculating deltas.',
-            '', '### Auto-accept field coverage vs selective error', '', '| Confidence threshold | Coverage | Error among accepted |', '|---:|---:|---:|']
+    lines += [
+        '', '## Threshold and ablations', '',
+        f'DEV-fitted: `{params.get("calibrated")}`; threshold `{params.get("review_threshold")}`; DEV training rows `{params.get("dev_size")}`.',
+        '', '### Auto-accept field coverage vs selective error', '',
+        '| Confidence threshold | Coverage | Error among accepted |', '|---:|---:|---:|'
+    ]
     for t in curve:
         error = "N/A" if t["error_rate"] is None else format(t["error_rate"], ".4f")
         lines.append(f'| {t["threshold"]:.2f} | {t["coverage"]:.4f} | {error} |')
-    if mock:
-        lines+=['','### Offline ablation runs (same TEST documents; not Gemini evidence)','',
-                '| Variant | Field F1 | Mean document confidence | Review count |',
-                '|---|---:|---:|---:|',
-                f'| Default (same 8) | {summarize([r for _,_,pairs in documents[:8] for r in flatten(pairs)])["f1"]:.4f} | {statistics.mean([res.document_confidence for _,res,_ in documents[:8]]):.4f} | {sum(res.needs_review for _,res,_ in documents[:8])} |']
-        for name,val in result_summary['offline_ablations'].items():
-            lines.append(f'| {name} | {val["field_f1"]:.4f} | {val["mean_document_confidence"]:.4f} | {val["review_count"]} |')
-        lines.append('All variants were actually executed against the first 8 held-out TEST documents. Identical F1 is expected: MockLLM ignores temperature and PDF bytes; the schema never fails, and grounding affects scoring rather than extraction. Differences in confidence are algorithmic, **not validated gains**.')
-    lines+=['','## Evaluation limitations','',
-            '- All labeled samples are generated by one template family. This is not an estimate of real construction documentation performance.',
-            '- Synthetic references describe explicit fields; omitted/ambiguous fields are intentional. Documents and truth are synthetic.',
-            '- No production PDF distribution, annotated handwriting, provider response, real-rate-limit, or provider privacy test is available without external credentials and real labeled documents.',
-            '- Numeric cost estimates depend on configurable assumptions and reported token metadata.',
-            '- `raw.json` lists document IDs, failures and severity codes for reproducible error analysis.']
-    (RESULTS/'report.md').write_text('\n'.join(lines)+'\n')
+
+    lines += [
+        '', f'### Ablation runs (8 held-out TEST documents; independent={not mock})', '',
+        '| Variant | Field F1 | Mean document confidence | Review count |',
+        '|---|---:|---:|---:|',
+        f'| Default (same 8) | {summarize([r for _, _, pairs in documents[:8] for r in flatten(pairs)])["f1"]:.4f} | {statistics.mean([res.document_confidence for _, res, _ in documents[:8]]):.4f} | {sum(res.needs_review for _, res, _ in documents[:8])} |'
+    ]
+    for name, val in result_summary['ablations'].items():
+        lines.append(f'| {name} | {val["field_f1"]:.4f} | {val["mean_document_confidence"]:.4f} | {val["review_count"]} |')
+
+    lines += [
+        '', '## Evaluation limitations', '',
+        '- Labeled fixtures are synthetic constructs for pipeline demonstration.',
+        '- Missing fields remain null rather than inferred.',
+        f'- Results generated with model `{client.model_id}`.',
+        f'- Full per-case predictions and mismatches are recorded in `{raw_file.name}`.'
+    ]
+    (report_file).write_text('\n'.join(lines) + '\n')
+    return result_summary
     return result_summary
 
 

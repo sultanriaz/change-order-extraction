@@ -1,0 +1,13 @@
+{
+  "orders": [
+    {
+      "change_order_number": "CO-039",
+      "date_issued": "2026-03-22",
+      "reason": "unforeseen_condition",
+      "change_type": "additive",
+      "total_amount": 8500.0,
+      "currency": "USD",
+      "status": "approved"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+NO-COST SPECIFICATION CLARIFICATION CHANGE ORDER
+Project Name: County Courthouse Expansion
+Project Number: CCH-201
+Change Order Number: CO-011NC
+Contract Number: CT-8822
+Date Issued: 2026-05-30
+Owner: County Board of Commissioners
+Contractor: Gilbane Building Company
+Title: Substitute Spec on Interior Paint Primer
+Description: Owner approves Sherwin Williams primer substitute in lieu of Benjamin Moore at zero cost difference.
+Reason: value_engineering
+Change Type: no_cost
+Status: approved
+
+Subtotal: $0.00
+Markup: $0.00
+Tax: $0.00
+Total Amount: $0.00
+Currency: USD
+Schedule Impact Days: 0

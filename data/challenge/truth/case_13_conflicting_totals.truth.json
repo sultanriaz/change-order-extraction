@@ -1,0 +1,19 @@
+{
+  "orders": [
+    {
+      "project_name": "Riverfront Plaza",
+      "project_number": "RP-302",
+      "change_order_number": "CO-055",
+      "date_issued": "2026-08-01",
+      "owner": "Riverfront Partners",
+      "contractor": "Delta Commercial Builders",
+      "title": "Hardscape Paver Upgrades",
+      "subtotal": 10000.0,
+      "markup": 1000.0,
+      "tax": 500.0,
+      "total_amount": 14000.0,
+      "currency": "USD",
+      "status": "pending"
+    }
+  ]
+}

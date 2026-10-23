@@ -2,7 +2,7 @@
 import json
 from unittest.mock import patch
 from co_extract.schema import (
-    LLMOutput, LLMChangeOrder, StrField, FloatField, from_llm, ChangeOrder
+    LLMOutput, LLMChangeOrder, StrField, from_llm, ChangeOrder
 )
 from co_extract.normalize import valid_currency
 from co_extract.config import Settings

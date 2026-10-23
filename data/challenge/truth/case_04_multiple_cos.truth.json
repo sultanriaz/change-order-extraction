@@ -1,0 +1,36 @@
+{
+  "orders": [
+    {
+      "project_name": "Riverside Medical Pavilion",
+      "project_number": "MED-77",
+      "change_order_number": "CO-101",
+      "contract_number": "CT-1044",
+      "date_issued": "2026-07-01",
+      "owner": "Riverside Health System",
+      "contractor": "Turner-Apex JV",
+      "title": "HVAC Return Duct Routing in Operating Room 3",
+      "reason": "unforeseen_condition",
+      "change_type": "additive",
+      "status": "approved",
+      "total_amount": 3200.0,
+      "currency": "USD",
+      "schedule_impact_days": 2
+    },
+    {
+      "project_name": "Riverside Medical Pavilion",
+      "project_number": "MED-77",
+      "change_order_number": "CO-102",
+      "contract_number": "CT-1044",
+      "date_issued": "2026-07-02",
+      "owner": "Riverside Health System",
+      "contractor": "Turner-Apex JV",
+      "title": "Electrical Panel Emergency Feed Relocation",
+      "reason": "owner_request",
+      "change_type": "additive",
+      "status": "approved",
+      "total_amount": 4500.0,
+      "currency": "USD",
+      "schedule_impact_days": 0
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "orders": [
+    {
+      "project_name": "Harbor View Condominiums",
+      "project_number": "HVC-12",
+      "change_order_number": "CO-022C",
+      "contract_number": "CT-4100",
+      "date_issued": "2026-05-19",
+      "owner": "Harbor View Development LLC",
+      "contractor": "Pacific Crest Builders Inc.",
+      "title": "Deletion of Penthouse Spa Tub and Finishes",
+      "reason": "owner_request",
+      "change_type": "deductive",
+      "status": "approved",
+      "subtotal": -8400.0,
+      "markup": 0.0,
+      "tax": 0.0,
+      "total_amount": -8400.0,
+      "currency": "USD",
+      "original_contract_sum": 2400000.0,
+      "revised_contract_sum": 2391600.0,
+      "schedule_impact_days": 0
+    }
+  ]
+}

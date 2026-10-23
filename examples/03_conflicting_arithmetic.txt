@@ -1,0 +1,23 @@
+CHANGE ORDER PROPOSAL - FIELD DISCREPANCY
+Project Name: Riverfront Plaza
+Project Number: RP-302
+Change Order Number: CO-055
+Date Issued: 04/05/2026
+Owner: Riverfront Partners LLC
+Contractor: Delta Commercial Builders
+Title: Hardscape Paver Upgrades
+Reason: owner_request
+Change Type: additive
+Status: pending
+
+Line Items:
+Item: Architectural concrete pavers | Qty: 500 | Unit: SF | Unit Cost: $20.00 | Amount: $10,000.00 | Code: 32-140
+
+Subtotal: $10,000.00
+Markup: $1,000.00
+Tax: $500.00
+Total Amount: $14,000.00
+Currency: USD
+
+Original Contract Sum: $500,000.00
+Revised Contract Sum: $514,000.00

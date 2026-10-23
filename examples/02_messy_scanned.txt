@@ -1,0 +1,14 @@
+[SCANNED DOCUMENT - OCR CONVERSION]
+Project Narne: Sun Valley Solar Far-m
+Pr0ject Nurnber: P~8820
+Change 0rder Nurnber: CO-039
+C0ntract Nurnber: CT-551
+Date lssued: 2026-03-22
+0wner: Desert Energy Partners LLC
+C0ntractor: SolTech Construction
+Title: Inverter Pad Concrete Thickening
+Reason: unforeseen_condition
+Change Type: additive
+Total Arnount: $8,500.00
+Currency: USD
+Status: approved

@@ -1,0 +1,27 @@
+{
+  "orders": [
+    {
+      "project_name": "Highland Community Center",
+      "project_number": "PRJ-9921",
+      "change_order_number": "COR-042",
+      "contract_number": "CN-4019",
+      "date_issued": "2026-05-10",
+      "owner": "Highland Municipality",
+      "contractor": "Horizon General Contractors",
+      "title": "Restroom ADA Upgrades and Tile Replacement",
+      "reason": "code_requirement",
+      "change_type": "additive",
+      "status": "pending",
+      "subtotal": 13120.0,
+      "markup": 1312.0,
+      "tax": 0.0,
+      "total_amount": 14432.0,
+      "currency": "USD",
+      "original_contract_sum": 620000.0,
+      "revised_contract_sum": 634432.0,
+      "schedule_impact_days": 4,
+      "original_completion_date": "2026-10-15",
+      "new_completion_date": "2026-10-19"
+    }
+  ]
+}
